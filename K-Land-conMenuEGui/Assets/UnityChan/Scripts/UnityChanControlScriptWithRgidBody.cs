@@ -5,6 +5,7 @@
 //
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 // 必要なコンポーネントの列記
 [RequireComponent(typeof (Animator))]
@@ -14,7 +15,10 @@ using System.Collections;
 public class UnityChanControlScriptWithRgidBody : MonoBehaviour
 {
 
-	public float animSpeed = 1.5f;				// アニメーション再生速度設定
+    public Text countText;
+    private int count;
+
+    public float animSpeed = 1.5f;				// アニメーション再生速度設定
 	public float lookSmoother = 3.0f;			// a smoothing setting for camera motion
 	public bool useCurves = true;				// Mecanimでカーブ調整を使うか設定する
 												// このスイッチが入っていないとカーブは使われない
@@ -62,7 +66,10 @@ public class UnityChanControlScriptWithRgidBody : MonoBehaviour
 		// CapsuleColliderコンポーネントのHeight、Centerの初期値を保存する
 		orgColHight = col.height;
 		orgVectColCenter = col.center;
-}
+
+        count = 0;
+        SetCountText();
+    }
 	
 	
 // 以下、メイン処理.リジッドボディと絡めるので、FixedUpdate内で処理を行う.
@@ -184,22 +191,43 @@ public class UnityChanControlScriptWithRgidBody : MonoBehaviour
 				anim.SetBool("Rest", false);
 			}
 		}
-	}
 
-	void OnGUI()
-	{
-		GUI.Box(new Rect(Screen.width -260, 10 ,250 ,150), "Interaction");
-		GUI.Label(new Rect(Screen.width -245,30,250,30),"Up/Down Arrow : Go Forwald/Go Back");
-		GUI.Label(new Rect(Screen.width -245,50,250,30),"Left/Right Arrow : Turn Left/Turn Right");
-		GUI.Label(new Rect(Screen.width -245,70,250,30),"Hit Space key while Running : Jump");
-		GUI.Label(new Rect(Screen.width -245,90,250,30),"Hit Spase key while Stopping : Rest");
-		GUI.Label(new Rect(Screen.width -245,110,250,30),"Left Control : Front Camera");
-		GUI.Label(new Rect(Screen.width -245,130,250,30),"Alt : LookAt Camera");
-	}
+       
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Pick Up"))
+        {
+            other.gameObject.SetActive(false);
+            count = count + 1;
+            SetCountText();
+        }
+    }
+    void SetCountText()
+    {
+        countText.text = count.ToString();
+        //TODO ogni x spille--> powre ups
+        //if (count >= 10)
+      //  {
+            //TODO
+      //  }
+    }
+
+    //void OnGUI()
+    //{
+    //GUI.Box(new Rect(Screen.width -260, 10 ,250 ,150), "Interaction");
+    //GUI.Label(new Rect(Screen.width -245,30,250,30),"Up/Down Arrow : Go Forwald/Go Back");
+    //GUI.Label(new Rect(Screen.width -245,50,250,30),"Left/Right Arrow : Turn Left/Turn Right");
+    //GUI.Label(new Rect(Screen.width -245,70,250,30),"Hit Space key while Running : Jump");
+    //GUI.Label(new Rect(Screen.width -245,90,250,30),"Hit Spase key while Stopping : Rest");
+    //GUI.Label(new Rect(Screen.width -245,110,250,30),"Left Control : Front Camera");
+    //GUI.Label(new Rect(Screen.width -245,130,250,30),"Alt : LookAt Camera");
+    //}
 
 
-	// キャラクターのコライダーサイズのリセット関数
-	void resetCollider()
+    // キャラクターのコライダーサイズのリセット関数
+    void resetCollider()
 	{
 	// コンポーネントのHeight、Centerの初期値を戻す
 		col.height = orgColHight;

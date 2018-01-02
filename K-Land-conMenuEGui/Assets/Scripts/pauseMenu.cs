@@ -51,4 +51,9 @@ public class pauseMenu : MonoBehaviour {
         PlayerPrefs.SetInt("currentscenesave", Application.loadedLevel);
         Application.Quit();
     }
+
+    public void Mute()
+    {
+        AudioListener.pause = !AudioListener.pause;
+    }
 }
