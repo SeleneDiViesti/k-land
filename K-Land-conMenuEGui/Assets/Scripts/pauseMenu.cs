@@ -45,15 +45,5 @@ public class pauseMenu : MonoBehaviour {
         Time.timeScale = 1f;
         SceneManager.LoadScene("startMenu");
     }
-    public void Save()
-    {
-        //TODO
-        PlayerPrefs.SetInt("currentscenesave", Application.loadedLevel);
-        Application.Quit();
-    }
-
-    public void Mute()
-    {
-        AudioListener.pause = !AudioListener.pause;
-    }
+   
 }
