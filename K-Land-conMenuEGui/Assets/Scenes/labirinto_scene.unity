@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1307,6 +1307,7 @@ GameObject:
   - component: {fileID: 35500967}
   - component: {fileID: 35500969}
   - component: {fileID: 35500968}
+  - component: {fileID: 35500970}
   m_Layer: 0
   m_Name: vixx_light (2)
   m_TagString: Untagged
@@ -1369,6 +1370,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 35500966}
   m_Mesh: {fileID: 4300000, guid: 165db01411f5e9b4597ead5f1c35e933, type: 3}
+--- !u!65 &35500970
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 35500966}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.07118532, y: 0.06711399, z: 0.17415953}
+  m_Center: {x: 0.0000009611249, y: -0.0000000018626449, z: -0.0033459733}
 --- !u!1001 &36596975
 Prefab:
   m_ObjectHideFlags: 0
@@ -5429,6 +5442,20 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!64 &145609271
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 145609266}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300004, guid: b55e801020504ba4bba411c3436ecf85, type: 3}
 --- !u!1001 &147052074
 Prefab:
   m_ObjectHideFlags: 0
@@ -6720,6 +6747,22 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 190944074}
   m_Mesh: {fileID: 4300136, guid: 45c8a7aeef1a3f34d9d01a60cb8e0007, type: 3}
+--- !u!1 &193058384 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: d864623c3331ba5428aa9deb70f9db82, type: 3}
+  m_PrefabInternal: {fileID: 1393563808}
+--- !u!65 &193058387
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 193058384}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0114343725, y: 0.011434372, z: 0.012182397}
+  m_Center: {x: 0, y: 6.984918e-10, z: 0.0037808204}
 --- !u!1 &198257226
 GameObject:
   m_ObjectHideFlags: 0
@@ -10746,6 +10789,7 @@ GameObject:
   - component: {fileID: 300511225}
   - component: {fileID: 300511227}
   - component: {fileID: 300511226}
+  - component: {fileID: 300511228}
   m_Layer: 0
   m_Name: vixx_light
   m_TagString: Untagged
@@ -10808,6 +10852,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 300511224}
   m_Mesh: {fileID: 4300000, guid: 165db01411f5e9b4597ead5f1c35e933, type: 3}
+--- !u!65 &300511228
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 300511224}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.07118532, y: 0.06711398, z: 0.17415951}
+  m_Center: {x: -0.00000094622374, y: 0.000001905486, z: -0.003345973}
 --- !u!1001 &301768442
 Prefab:
   m_ObjectHideFlags: 0
@@ -10978,6 +11034,7 @@ GameObject:
   - component: {fileID: 305736749}
   - component: {fileID: 305736751}
   - component: {fileID: 305736750}
+  - component: {fileID: 305736752}
   m_Layer: 0
   m_Name: vixx_light (1)
   m_TagString: Untagged
@@ -11040,6 +11097,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 305736748}
   m_Mesh: {fileID: 4300000, guid: 165db01411f5e9b4597ead5f1c35e933, type: 3}
+--- !u!65 &305736752
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 305736748}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.07118532, y: 0.06711398, z: 0.17415951}
+  m_Center: {x: 0.0000009611249, y: 0.000001905486, z: -0.0033459582}
 --- !u!1 &306903562
 GameObject:
   m_ObjectHideFlags: 0
@@ -12770,6 +12839,39 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ebb84a0af2fb48b4ca724e3d98b058aa, type: 3}
   m_IsPrefabParent: 0
+--- !u!1 &360037884 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100006, guid: fd07ce10ab199c848b82f314009b9f34, type: 3}
+  m_PrefabInternal: {fileID: 178458524}
+--- !u!136 &360037885
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 360037884}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.024509149
+  m_Height: 0.10084934
+  m_Direction: 2
+  m_Center: {x: -0.0013667536, y: -2.7080173e-18, z: -0.012556085}
+--- !u!1 &360633533 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: c7ca7505e53893b429007c50d12b7bc1, type: 3}
+  m_PrefabInternal: {fileID: 368483152}
+--- !u!65 &360633536
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 360633533}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.039506104, y: 0.034264687, z: 0.052913837}
+  m_Center: {x: 0, y: 0, z: -0.0000000018626451}
 --- !u!1001 &365159901
 Prefab:
   m_ObjectHideFlags: 0
@@ -15073,7 +15175,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 8529176bbb5536e4a9783a225ebef556, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 139.82124
+      value: 136.99
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8529176bbb5536e4a9783a225ebef556, type: 3}
       propertyPath: m_LocalPosition.y
@@ -17497,6 +17599,24 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ebb84a0af2fb48b4ca724e3d98b058aa, type: 3}
   m_IsPrefabParent: 0
+--- !u!1 &505872832 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: d864623c3331ba5428aa9deb70f9db82, type: 3}
+  m_PrefabInternal: {fileID: 522999623}
+--- !u!64 &505872835
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 505872832}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: d864623c3331ba5428aa9deb70f9db82, type: 3}
 --- !u!1001 &506399944
 Prefab:
   m_ObjectHideFlags: 0
@@ -18133,6 +18253,7 @@ GameObject:
   - component: {fileID: 522977504}
   - component: {fileID: 522977506}
   - component: {fileID: 522977505}
+  - component: {fileID: 522977507}
   m_Layer: 0
   m_Name: vixx_light (3)
   m_TagString: Untagged
@@ -18195,6 +18316,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 522977503}
   m_Mesh: {fileID: 4300000, guid: 165db01411f5e9b4597ead5f1c35e933, type: 3}
+--- !u!65 &522977507
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 522977503}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.07118532, y: 0.06711399, z: 0.17415953}
+  m_Center: {x: 0.0000009611249, y: 0.000001905486, z: -0.0033459659}
 --- !u!1001 &522999623
 Prefab:
   m_ObjectHideFlags: 0
@@ -20021,6 +20154,7 @@ GameObject:
   - component: {fileID: 583355736}
   - component: {fileID: 583355738}
   - component: {fileID: 583355737}
+  - component: {fileID: 583355739}
   m_Layer: 0
   m_Name: vixx_light (14)
   m_TagString: Untagged
@@ -20083,6 +20217,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 583355735}
   m_Mesh: {fileID: 4300000, guid: 165db01411f5e9b4597ead5f1c35e933, type: 3}
+--- !u!65 &583355739
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 583355735}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.07118532, y: 0.06711398, z: 0.17415951}
+  m_Center: {x: 0.0000009611249, y: -0.0000000018626448, z: -0.0033459656}
 --- !u!1001 &586137801
 Prefab:
   m_ObjectHideFlags: 0
@@ -22644,6 +22790,7 @@ GameObject:
   - component: {fileID: 650507875}
   - component: {fileID: 650507877}
   - component: {fileID: 650507876}
+  - component: {fileID: 650507878}
   m_Layer: 0
   m_Name: vixx_light (15)
   m_TagString: Untagged
@@ -22706,6 +22853,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 650507874}
   m_Mesh: {fileID: 4300000, guid: 165db01411f5e9b4597ead5f1c35e933, type: 3}
+--- !u!65 &650507878
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 650507874}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.07118532, y: 0.06711398, z: 0.17415951}
+  m_Center: {x: 0.0000009611249, y: 0.000001905486, z: -0.0033459656}
 --- !u!1 &651046391
 GameObject:
   m_ObjectHideFlags: 0
@@ -25937,6 +26096,7 @@ GameObject:
   - component: {fileID: 746820245}
   - component: {fileID: 746820247}
   - component: {fileID: 746820246}
+  - component: {fileID: 746820248}
   m_Layer: 0
   m_Name: vixx_light (7)
   m_TagString: Untagged
@@ -25999,6 +26159,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 746820244}
   m_Mesh: {fileID: 4300000, guid: 165db01411f5e9b4597ead5f1c35e933, type: 3}
+--- !u!65 &746820248
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 746820244}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.07118532, y: 0.06711398, z: 0.17415951}
+  m_Center: {x: 0.0000009611249, y: -0.0000000018626448, z: -0.0033459656}
 --- !u!1001 &751210627
 Prefab:
   m_ObjectHideFlags: 0
@@ -27587,6 +27759,7 @@ GameObject:
   - component: {fileID: 797646985}
   - component: {fileID: 797646987}
   - component: {fileID: 797646986}
+  - component: {fileID: 797646988}
   m_Layer: 0
   m_Name: vixx_light (4)
   m_TagString: Untagged
@@ -27649,6 +27822,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 797646984}
   m_Mesh: {fileID: 4300000, guid: 165db01411f5e9b4597ead5f1c35e933, type: 3}
+--- !u!65 &797646988
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 797646984}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.07118532, y: 0.06711398, z: 0.17415951}
+  m_Center: {x: 0.000000007450581, y: -0.0000019092113, z: -0.003345973}
 --- !u!1 &798093827
 GameObject:
   m_ObjectHideFlags: 0
@@ -28233,6 +28418,22 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ebb84a0af2fb48b4ca724e3d98b058aa, type: 3}
   m_IsPrefabParent: 0
+--- !u!1 &806488945 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: d864623c3331ba5428aa9deb70f9db82, type: 3}
+  m_PrefabInternal: {fileID: 499045866}
+--- !u!65 &806488948
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 806488945}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0114343725, y: 0.01143437, z: 0.012182396}
+  m_Center: {x: 0, y: -0.0000001185108, z: 0.0037808183}
 --- !u!1 &807491188
 GameObject:
   m_ObjectHideFlags: 0
@@ -37030,6 +37231,22 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ebb84a0af2fb48b4ca724e3d98b058aa, type: 3}
   m_IsPrefabParent: 0
+--- !u!1 &1045355771 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: d864623c3331ba5428aa9deb70f9db82, type: 3}
+  m_PrefabInternal: {fileID: 295744527}
+--- !u!65 &1045355774
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1045355771}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0114343725, y: 0.011434372, z: 0.012182397}
+  m_Center: {x: 0, y: 6.984918e-10, z: 0.0037808204}
 --- !u!1001 &1045502650
 Prefab:
   m_ObjectHideFlags: 0
@@ -40444,6 +40661,7 @@ GameObject:
   - component: {fileID: 1143625353}
   - component: {fileID: 1143625355}
   - component: {fileID: 1143625354}
+  - component: {fileID: 1143625356}
   m_Layer: 0
   m_Name: vixx_light (12)
   m_TagString: Untagged
@@ -40506,6 +40724,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1143625352}
   m_Mesh: {fileID: 4300000, guid: 165db01411f5e9b4597ead5f1c35e933, type: 3}
+--- !u!65 &1143625356
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1143625352}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.07118532, y: 0.06711398, z: 0.17415951}
+  m_Center: {x: 0.0000009611249, y: -0.0000000018626448, z: -0.0033459656}
 --- !u!1 &1143852273
 GameObject:
   m_ObjectHideFlags: 0
@@ -41926,6 +42156,7 @@ GameObject:
   - component: {fileID: 1173527938}
   - component: {fileID: 1173527940}
   - component: {fileID: 1173527939}
+  - component: {fileID: 1173527941}
   m_Layer: 0
   m_Name: vixx_light (10)
   m_TagString: Untagged
@@ -41988,6 +42219,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1173527937}
   m_Mesh: {fileID: 4300000, guid: 165db01411f5e9b4597ead5f1c35e933, type: 3}
+--- !u!65 &1173527941
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1173527937}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.07118532, y: 0.06711398, z: 0.17415951}
+  m_Center: {x: 0.000000007450581, y: -0.0000000018626448, z: -0.0033459656}
 --- !u!1001 &1174719571
 Prefab:
   m_ObjectHideFlags: 0
@@ -46537,6 +46780,7 @@ GameObject:
   - component: {fileID: 1297469066}
   - component: {fileID: 1297469068}
   - component: {fileID: 1297469067}
+  - component: {fileID: 1297469069}
   m_Layer: 0
   m_Name: vixx_light (11)
   m_TagString: Untagged
@@ -46599,6 +46843,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1297469065}
   m_Mesh: {fileID: 4300000, guid: 165db01411f5e9b4597ead5f1c35e933, type: 3}
+--- !u!65 &1297469069
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1297469065}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.07118532, y: 0.06711398, z: 0.17415951}
+  m_Center: {x: 0.0000009611249, y: 0.000001905486, z: -0.0033459656}
 --- !u!1001 &1301693334
 Prefab:
   m_ObjectHideFlags: 0
@@ -47480,6 +47736,7 @@ GameObject:
   - component: {fileID: 1329675380}
   - component: {fileID: 1329675382}
   - component: {fileID: 1329675381}
+  - component: {fileID: 1329675383}
   m_Layer: 0
   m_Name: vixx_light (8)
   m_TagString: Untagged
@@ -47542,6 +47799,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1329675379}
   m_Mesh: {fileID: 4300000, guid: 165db01411f5e9b4597ead5f1c35e933, type: 3}
+--- !u!65 &1329675383
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1329675379}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.07118532, y: 0.06711398, z: 0.17415951}
+  m_Center: {x: 0.0000009611249, y: -0.0000000018626448, z: -0.0033459656}
 --- !u!1001 &1332159654
 Prefab:
   m_ObjectHideFlags: 0
@@ -52369,6 +52638,23 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ebb84a0af2fb48b4ca724e3d98b058aa, type: 3}
   m_IsPrefabParent: 0
+--- !u!1 &1462957667 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100010, guid: fd07ce10ab199c848b82f314009b9f34, type: 3}
+  m_PrefabInternal: {fileID: 178458524}
+--- !u!136 &1462957668
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1462957667}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.019738326
+  m_Height: 0.11648903
+  m_Direction: 2
+  m_Center: {x: -0.00012040615, y: 0, z: 0.029627113}
 --- !u!1001 &1463736278
 Prefab:
   m_ObjectHideFlags: 0
@@ -53733,6 +54019,7 @@ GameObject:
   - component: {fileID: 1506394069}
   - component: {fileID: 1506394071}
   - component: {fileID: 1506394070}
+  - component: {fileID: 1506394072}
   m_Layer: 0
   m_Name: vixx_light (9)
   m_TagString: Untagged
@@ -53795,6 +54082,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1506394068}
   m_Mesh: {fileID: 4300000, guid: 165db01411f5e9b4597ead5f1c35e933, type: 3}
+--- !u!65 &1506394072
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1506394068}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.07118532, y: 0.06711398, z: 0.17415951}
+  m_Center: {x: 0.0000009611249, y: 0.000001905486, z: -0.0033459656}
 --- !u!1001 &1514883675
 Prefab:
   m_ObjectHideFlags: 0
@@ -56605,6 +56904,7 @@ GameObject:
   - component: {fileID: 1573404135}
   - component: {fileID: 1573404137}
   - component: {fileID: 1573404136}
+  - component: {fileID: 1573404138}
   m_Layer: 0
   m_Name: vixx_light (13)
   m_TagString: Untagged
@@ -56667,6 +56967,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1573404134}
   m_Mesh: {fileID: 4300000, guid: 165db01411f5e9b4597ead5f1c35e933, type: 3}
+--- !u!65 &1573404138
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1573404134}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.07118532, y: 0.06711398, z: 0.17415951}
+  m_Center: {x: 0.000000007450581, y: -0.0000000018626448, z: -0.0033459656}
 --- !u!1 &1574857972
 GameObject:
   m_ObjectHideFlags: 0
@@ -58591,6 +58903,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.020000005, y: 0.020000005, z: 0.019999996}
   m_Center: {x: 0.00000011874363, y: -9.313224e-10, z: 1.323489e-23}
+--- !u!1 &1614479980 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100002, guid: fd07ce10ab199c848b82f314009b9f34, type: 3}
+  m_PrefabInternal: {fileID: 178458524}
+--- !u!64 &1614479984
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1614479980}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300008, guid: fd07ce10ab199c848b82f314009b9f34, type: 3}
 --- !u!1 &1619248070
 GameObject:
   m_ObjectHideFlags: 0
@@ -59808,6 +60138,22 @@ Transform:
   m_PrefabParentObject: {fileID: 4892733036531968, guid: 95cf9931c954f1a418fb8a61682bda49,
     type: 2}
   m_PrefabInternal: {fileID: 1642621431}
+--- !u!1 &1650782221 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: d864623c3331ba5428aa9deb70f9db82, type: 3}
+  m_PrefabInternal: {fileID: 1230015787}
+--- !u!65 &1650782224
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1650782221}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0114343725, y: 0.01143437, z: 0.012182396}
+  m_Center: {x: 0.00000011920929, y: -0.0000001185108, z: 0.0037808183}
 --- !u!1 &1652602205
 GameObject:
   m_ObjectHideFlags: 0
@@ -62346,6 +62692,22 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1732793734}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1733466593 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: d864623c3331ba5428aa9deb70f9db82, type: 3}
+  m_PrefabInternal: {fileID: 450249673}
+--- !u!65 &1733466596
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1733466593}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0114343725, y: 0.011434372, z: 0.012182397}
+  m_Center: {x: -0.00000011920929, y: 6.984918e-10, z: 0.0037808195}
 --- !u!1001 &1738181436
 Prefab:
   m_ObjectHideFlags: 0
@@ -63259,6 +63621,7 @@ GameObject:
   - component: {fileID: 1768893299}
   - component: {fileID: 1768893301}
   - component: {fileID: 1768893300}
+  - component: {fileID: 1768893302}
   m_Layer: 0
   m_Name: vixx_light (5)
   m_TagString: Untagged
@@ -63321,6 +63684,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1768893298}
   m_Mesh: {fileID: 4300000, guid: 165db01411f5e9b4597ead5f1c35e933, type: 3}
+--- !u!65 &1768893302
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1768893298}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.07118532, y: 0.06711398, z: 0.17415951}
+  m_Center: {x: 0.000000007450581, y: -0.0000019092113, z: -0.0033459582}
 --- !u!1001 &1769520955
 Prefab:
   m_ObjectHideFlags: 0
@@ -67275,6 +67650,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1900394092 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: d864623c3331ba5428aa9deb70f9db82, type: 3}
+  m_PrefabInternal: {fileID: 493398038}
+--- !u!65 &1900394095
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1900394092}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0114343725, y: 0.011434372, z: 0.012182397}
+  m_Center: {x: 0, y: 6.984918e-10, z: 0.0037808183}
 --- !u!1 &1902060600
 GameObject:
   m_ObjectHideFlags: 0
@@ -67522,7 +67913,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1909276144}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.74, y: 8.42, z: -4.32}
+  m_LocalPosition: {x: 9.74, y: 6.92, z: -4.32}
   m_LocalScale: {x: 0.14955613, y: 3.3351927, z: 0.2948344}
   m_Children: []
   m_Father: {fileID: 441339136}
@@ -67538,7 +67929,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 20, y: 1, z: 10}
+  m_Size: {x: 10, y: 0.1, z: 5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1909276147
 MonoBehaviour:
@@ -68264,6 +68655,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.020000005, y: 0.020000003, z: 0.019999996}
   m_Center: {x: 0.00000011874363, y: 0.000000013969839, z: 0}
+--- !u!1 &1931053482 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100002, guid: b55e801020504ba4bba411c3436ecf85, type: 3}
+  m_PrefabInternal: {fileID: 285523456}
+--- !u!64 &1931053486
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1931053482}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300002, guid: b55e801020504ba4bba411c3436ecf85, type: 3}
 --- !u!1001 &1931971222
 Prefab:
   m_ObjectHideFlags: 0
@@ -73228,6 +73637,22 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ebb84a0af2fb48b4ca724e3d98b058aa, type: 3}
   m_IsPrefabParent: 0
+--- !u!1 &2099876083 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100004, guid: 8529176bbb5536e4a9783a225ebef556, type: 3}
+  m_PrefabInternal: {fileID: 431697087}
+--- !u!65 &2099876087
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2099876083}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.016071698, y: 0.01194668, z: 0.020625956}
+  m_Center: {x: 0.000000117346644, y: 0.05345572, z: 0.00061170326}
 --- !u!1 &2102135824
 GameObject:
   m_ObjectHideFlags: 0
@@ -73238,6 +73663,7 @@ GameObject:
   - component: {fileID: 2102135825}
   - component: {fileID: 2102135827}
   - component: {fileID: 2102135826}
+  - component: {fileID: 2102135828}
   m_Layer: 0
   m_Name: vixx_light (6)
   m_TagString: Untagged
@@ -73300,6 +73726,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2102135824}
   m_Mesh: {fileID: 4300000, guid: 165db01411f5e9b4597ead5f1c35e933, type: 3}
+--- !u!65 &2102135828
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2102135824}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.07118532, y: 0.06711398, z: 0.17415951}
+  m_Center: {x: 0.0000019147992, y: -0.0000000018626448, z: -0.0033459656}
 --- !u!1001 &2102408704
 Prefab:
   m_ObjectHideFlags: 0
