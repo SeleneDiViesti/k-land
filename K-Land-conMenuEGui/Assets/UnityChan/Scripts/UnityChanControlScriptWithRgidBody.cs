@@ -15,7 +15,7 @@ using UnityEngine.UI;
 public class UnityChanControlScriptWithRgidBody : MonoBehaviour
 {
 
-    public Text countText;
+    public Text countText;                      //per le spille da raccogliere
     private int count;
 
     public float animSpeed = 1.5f;				// アニメーション再生速度設定
