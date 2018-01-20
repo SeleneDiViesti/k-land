@@ -6,9 +6,19 @@ using UnityEngine.SceneManagement;
 public class pauseMenu : MonoBehaviour {
 
     public static bool GameIsPaused = false;
-    public GameObject pauseMenuUI;
-	// Update is called once per frame
-	void Update () {
+    public GameObject pauseUI;
+    public GameObject playUI;
+
+    void Start()
+    {
+        pauseUI = GameObject.Find("GuiPause");
+        playUI = GameObject.Find("GuiPlay");
+        pauseUI.SetActive(false);
+    }
+
+
+    // Update is called once per frame
+    void Update () {
         if (Input.GetKeyDown(KeyCode.Escape)) //per mettere in pausa usiamo tasto esc
         {
             if (GameIsPaused)
@@ -23,14 +33,16 @@ public class pauseMenu : MonoBehaviour {
 
     public void Resume()
     {
-        pauseMenuUI.SetActive(false);
+        pauseUI.SetActive(false);
+        playUI.SetActive(true);
         Time.timeScale = 1f;
         GameIsPaused = false;
     }
 
     void Pause()
     {
-        pauseMenuUI.SetActive(true);
+        pauseUI.SetActive(true);
+        playUI.SetActive(false);
         Time.timeScale = 0f;
         GameIsPaused = true;
     }

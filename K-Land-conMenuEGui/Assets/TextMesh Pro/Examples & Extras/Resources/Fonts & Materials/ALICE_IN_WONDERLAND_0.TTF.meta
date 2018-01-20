@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: f5e3f76f2f4dd0d44a8d2800be50b319
+timeCreated: 1516441082
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Alice in Wonderland
+  fontNames:
+  - Alice in Wonderland
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 7cfaaced05925214ba228258842162e1, type: 3}
+  - {fileID: 12800000, guid: 38616b2e988e222478fcb733bce5a367, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
