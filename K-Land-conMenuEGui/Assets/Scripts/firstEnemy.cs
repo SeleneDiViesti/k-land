@@ -5,7 +5,7 @@ using UnityEngine;
 public class firstEnemy : MonoBehaviour {
     public GameObject gui;
     // Use this for initialization
-    void Start()
+    void Awake()
     {
         gui = GameObject.Find("PrimoNemico");
         gui.SetActive(false);
