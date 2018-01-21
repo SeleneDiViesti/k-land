@@ -22,4 +22,12 @@ public class scomparsaInfoMovimenti : MonoBehaviour {
             guiSpille.SetActive(true);
         }
     }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            guiSpille.SetActive(false);
+        }
+    }
 }
