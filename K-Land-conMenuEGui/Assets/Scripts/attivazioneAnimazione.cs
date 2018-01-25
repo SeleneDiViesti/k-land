@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class attivazioneAnimazione : MonoBehaviour {
     public GameObject GuiCatapulta;
+    public GameObject braccio;
     public Animator anim;
     private bool isNear = false;
   
     // Use this for initialization
     void Start()
     {
+        braccio= GameObject.Find("braccioDellaCatapulta");
         GuiCatapulta = GameObject.Find("GuiCatapulta");
         GuiCatapulta.SetActive(false);
-        anim=this.GetComponent<Animator>();
+        anim= braccio.GetComponent<Animator>();
         anim.Play("New State");
     }
 
