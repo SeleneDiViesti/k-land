@@ -22,10 +22,11 @@ public class madhatter_animController : MonoBehaviour {
 
 		// per fermare l'animazione cliccare un altro tasto 
 		// cercare di modificare questa parte in modo automatico senza i tasti
-		if (Input.GetKeyDown ("2")) {
-			anim.Play ("fermo"); 
-		}
+//		if (Input.GetKeyDown ("2")) {
+//			anim.Play ("fermo"); 
+//		}
 
-		// fare in modo che quando l'animazione sia finita che non faccia il loop 
+		// fare in modo che quando l'animazione sia finita che non faccia il loop:
+		//risolto togliendo il loop dal pannello dell'animazione
 	}
 }
