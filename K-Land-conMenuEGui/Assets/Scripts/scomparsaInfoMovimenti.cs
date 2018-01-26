@@ -5,10 +5,12 @@ using UnityEngine;
 public class scomparsaInfoMovimenti : MonoBehaviour {
     public GameObject guiInfo;
     public GameObject guiSpille;
+    public GameObject guiBenvenuto;
     // Use this for initialization
     void Start()
     {
         guiInfo = GameObject.Find("InfoMovimenti");
+        guiBenvenuto = GameObject.Find("Benvenuto");
         guiSpille = GameObject.Find("InfoLabirintoESpille");
         guiSpille.SetActive(false);
     }
@@ -19,6 +21,7 @@ public class scomparsaInfoMovimenti : MonoBehaviour {
         if (other.CompareTag("Player"))
         {
             guiInfo.SetActive(false);
+            guiBenvenuto.SetActive(false);
             guiSpille.SetActive(true);
         }
     }
