@@ -8,7 +8,7 @@ public class primoPassaggio : MonoBehaviour
     public Vector3 mposition;
     public Quaternion mrotation;
     public GameObject unitychain;
-    private Vector3 scaleFactor = new Vector3(.3f, .3f, .3f);
+    
 
     // Update is called once per frame
     void OnTriggerEnter(Collider other)
@@ -20,7 +20,7 @@ public class primoPassaggio : MonoBehaviour
             mrotation = inizio2.transform.rotation;
             unitychain = GameObject.FindGameObjectWithTag("Player");
             unitychain.transform.SetPositionAndRotation(mposition, mrotation);
-            unitychain.transform.localScale = scaleFactor;
+            
         }
     }
 }
