@@ -32,4 +32,6 @@ public class salto_carte : MonoBehaviour {
         }
 	}
 
+
+
 }
