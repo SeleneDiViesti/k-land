@@ -6,34 +6,112 @@ using UnityEngine;
 public class attivazioneAnimazione : MonoBehaviour {
     public GameObject GuiCatapulta;
     public GameObject braccio;
+    
     private bool isNear = false;
+    private bool isAvaible = false;
+    private int numProiettili;
+    private int i=0;
     public Animator anim;
     public AnimatorStateInfo currentBaseState;
 
     static int idleState = Animator.StringToHash("Base Layer.New State");
     static int animazione = Animator.StringToHash("Base Layer.catapulta_animation");
-   
+
+    public Transform myTarget;  // drag the target here
+    public Transform myPos;
+    public GameObject projecticle;  // drag the cannonball prefab here
+
+    private List<GameObject> palle;
+
+    //private float firingAngle = 45.0f;
+    //private float gravity = 9.8f;
+    private float t =2f;
+
 
     // Use this for initialization
     void Start()
     {
-        braccio= GameObject.Find("braccioDellaCatapulta");
+        
+        braccio = GameObject.Find("braccioDellaCatapulta");
+       // palla = GameObject.Find("palla");
         GuiCatapulta = GameObject.Find("GuiCatapulta");
         GuiCatapulta.SetActive(false);
-        anim= braccio.GetComponent<Animator>();
-        
+        anim = braccio.GetComponent<Animator>();
+        //string stringa = GameObject.Find("Count Text").ToString();
+        //numProiettili = int.Parse(stringa);
+        numProiettili = 10;
+
+        palle=new List<GameObject>();
+        //StartCoroutine(SimulateProjectile());
         //anim.Play("New State");
+
     }
+
+    //IEnumerator SimulateProjectile()
+    void SimulateProjectile(GameObject palla)
+    {
+        Vector3 forceDirection = myPos.position-myTarget.position;
+
+        float X = forceDirection.x;         // Distance to travel along X : Space traveled @ time t
+        float Y = forceDirection.y;         // Distance to travel along Y : Space traveled @ time t
+        float Z = forceDirection.z;         // Distance to travel along Z : Space traveled @ time t
+               
+        float V0x = X / t;
+        float V0z = Z / t;
+        float V0y = (Y + (0.5f * Mathf.Abs(Physics.gravity.magnitude) * Mathf.Pow(t, 2))) / t;
+
+        palla.GetComponent<Rigidbody>().AddForce(Vector3.left * V0x, ForceMode.VelocityChange); //TODO
+        palla.GetComponent<Rigidbody>().AddForce(Vector3.up * V0y*3.5f, ForceMode.VelocityChange);
+        palla.GetComponent<Rigidbody>().AddForce(Vector3.forward * V0z, ForceMode.VelocityChange); //TODO
+
+        // Calculate the velocity needed to throw the object to the target at specified angle.
+        //float projectile_Velocity = target_Distance / (Mathf.Sin(2 * firingAngle * Mathf.Deg2Rad) / gravity);
+
+        //// Extract the X  Y componenent of the velocity
+        //float Vx = Mathf.Sqrt(projectile_Velocity) * Mathf.Cos(firingAngle * Mathf.Deg2Rad);
+        //float Vy = Mathf.Sqrt(projectile_Velocity) * Mathf.Sin(firingAngle * Mathf.Deg2Rad);
+
+        //// Calculate flight time.
+        //float flightDuration = target_Distance / Vx;
+
+        //float elapse_time = 0;
+
+        //while (elapse_time < flightDuration)
+        //{
+        //    palla.transform.Translate(0, (Vy - (gravity * elapse_time)) * Time.deltaTime, Vx * Time.deltaTime);
+
+        //    elapse_time += Time.deltaTime;
+
+        //    //yield return null;
+        //}
+    }
+    
 
     private void FixedUpdate()
     {
         currentBaseState = anim.GetCurrentAnimatorStateInfo(0);
-
-        if (Input.GetKeyDown(KeyCode.Z) && isNear == true)
+        if (isNear)
         {
-            if (currentBaseState.nameHash == idleState)
+            if (Input.GetKeyDown(KeyCode.C) && numProiettili>0)
             {
-            anim.SetBool("zKey", true);
+                GameObject palla = Instantiate(projecticle, myPos.transform.position, Quaternion.identity);
+                palle.Add(palla);
+                numProiettili = numProiettili - 1;
+                isAvaible = true;
+                i++;
+            }
+
+            if (Input.GetKeyDown(KeyCode.Z) && isAvaible)
+            {
+                if (currentBaseState.nameHash == idleState)
+                {
+                    anim.SetBool("zKey", true);
+                    
+                    SimulateProjectile(palle[ i - 1]);
+                    // palla.GetComponent<Rigidbody>().velocity = BallisticVel(myTarget, shootAngle);
+                    // Destroy(ball, 10);
+                    isAvaible = false;
+                }
             }
         }
 
