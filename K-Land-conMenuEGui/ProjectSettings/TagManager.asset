@@ -7,6 +7,9 @@ TagManager:
   - Pick Up
   - InfoIniziali
   - GuiPause
+  - proiettile
+  - proiettile2
+  - proiettile3
   layers:
   - Default
   - TransparentFX

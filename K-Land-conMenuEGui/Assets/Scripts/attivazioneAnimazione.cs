@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class attivazioneAnimazione : MonoBehaviour {
     public GameObject GuiCatapulta;
+    public GameObject Catapulta;
     public GameObject braccio;
     
     private bool isNear = false;
@@ -33,8 +34,8 @@ public class attivazioneAnimazione : MonoBehaviour {
     {
         
         braccio = GameObject.Find("braccioDellaCatapulta");
-       // palla = GameObject.Find("palla");
         GuiCatapulta = GameObject.Find("GuiCatapulta");
+        Catapulta = GameObject.Find("Catapulta");
         GuiCatapulta.SetActive(false);
         anim = braccio.GetComponent<Animator>();
         //string stringa = GameObject.Find("Count Text").ToString();
@@ -50,7 +51,7 @@ public class attivazioneAnimazione : MonoBehaviour {
     //IEnumerator SimulateProjectile()
     void SimulateProjectile(GameObject palla)
     {
-        Vector3 forceDirection = myPos.position-myTarget.position;
+        Vector3 forceDirection = myTarget.position- myPos.position;
 
         float X = forceDirection.x;         // Distance to travel along X : Space traveled @ time t
         float Y = forceDirection.y;         // Distance to travel along Y : Space traveled @ time t
@@ -60,9 +61,9 @@ public class attivazioneAnimazione : MonoBehaviour {
         float V0z = Z / t;
         float V0y = (Y + (0.5f * Mathf.Abs(Physics.gravity.magnitude) * Mathf.Pow(t, 2))) / t;
 
-        palla.GetComponent<Rigidbody>().AddForce(Vector3.left * V0x, ForceMode.VelocityChange); //TODO
-        palla.GetComponent<Rigidbody>().AddForce(Vector3.up * V0y*3.5f, ForceMode.VelocityChange);
-        palla.GetComponent<Rigidbody>().AddForce(Vector3.forward * V0z, ForceMode.VelocityChange); //TODO
+        palla.GetComponent<Rigidbody>().AddForce(Vector3.left * 3f, ForceMode.VelocityChange); //TODO
+        palla.GetComponent<Rigidbody>().AddForce(Vector3.up * V0y*1.5f, ForceMode.VelocityChange);
+        //palla.GetComponent<Rigidbody>().AddForce(Vector3.forward * V0z, ForceMode.VelocityChange);
 
         // Calculate the velocity needed to throw the object to the target at specified angle.
         //float projectile_Velocity = target_Distance / (Mathf.Sin(2 * firingAngle * Mathf.Deg2Rad) / gravity);
@@ -73,19 +74,9 @@ public class attivazioneAnimazione : MonoBehaviour {
 
         //// Calculate flight time.
         //float flightDuration = target_Distance / Vx;
-
-        //float elapse_time = 0;
-
-        //while (elapse_time < flightDuration)
-        //{
-        //    palla.transform.Translate(0, (Vy - (gravity * elapse_time)) * Time.deltaTime, Vx * Time.deltaTime);
-
-        //    elapse_time += Time.deltaTime;
-
-        //    //yield return null;
-        //}
+        
     }
-    
+
 
     private void FixedUpdate()
     {
@@ -94,7 +85,9 @@ public class attivazioneAnimazione : MonoBehaviour {
         {
             if (Input.GetKeyDown(KeyCode.C) && numProiettili>0)
             {
-                GameObject palla = Instantiate(projecticle, myPos.transform.position, Quaternion.identity);
+                GameObject palla;
+                //palla = Instantiate(projecticle, myPos.transform.position, myPos.transform.rotation, Catapulta.transform);
+                palla = Instantiate(projecticle, myPos.transform.position, myPos.transform.rotation);
                 palle.Add(palla);
                 numProiettili = numProiettili - 1;
                 isAvaible = true;
@@ -110,6 +103,7 @@ public class attivazioneAnimazione : MonoBehaviour {
                     SimulateProjectile(palle[ i - 1]);
                     // palla.GetComponent<Rigidbody>().velocity = BallisticVel(myTarget, shootAngle);
                     // Destroy(ball, 10);
+
                     isAvaible = false;
                 }
             }
