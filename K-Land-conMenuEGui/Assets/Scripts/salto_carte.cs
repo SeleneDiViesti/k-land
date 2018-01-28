@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
 
+
 public class salto_carte : MonoBehaviour {
 
 	public GameObject salto_pos_carta;
@@ -21,11 +22,14 @@ public class salto_carte : MonoBehaviour {
       		mposition = salto_pos_carta.transform.position;
 			mrotation = salto_pos_carta.transform.rotation;
 			unitychain = GameObject.FindGameObjectWithTag ("Player");
+					
+        VideoPlayer_1 = GameObject.FindObjectOfType<VideoPlayer>();
 
-			VideoPlayer_1 = GameObject.FindObjectOfType<VideoPlayer>();
 
 			unitychain.transform.SetPositionAndRotation (mposition, mrotation);
             unitychain.transform.localScale = scaleFactor;
+			// preparare il video per renderizzarlo
+			VideoPlayer_1.Prepare ();
 
 			VideoPlayer_1.Play();
 
