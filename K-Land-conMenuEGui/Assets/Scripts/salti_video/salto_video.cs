@@ -10,8 +10,8 @@ public class salto_video : MonoBehaviour {
 	public GameObject unitychain;
 	public Vector3 scaleFactor = new Vector3(.3f, .3f, .3f);
 
-	public VideoPlayer video;
-	public VideoPlayer video_stop;
+	public VideoPlayer VideoPlayer_2;
+	public VideoPlayer VideoPlayer;
 
 	void OnTriggerEnter(Collider other)
 	{
@@ -21,14 +21,16 @@ public class salto_video : MonoBehaviour {
 			mrotation = skip_fine.transform.rotation;
 			unitychain = GameObject.FindGameObjectWithTag ("Player");
 
-			video = GameObject.FindObjectOfType<VideoPlayer>();
-			video_stop = GameObject.FindObjectOfType<VideoPlayer>();
+			VideoPlayer_2 = GameObject.FindObjectOfType<VideoPlayer>();
+			VideoPlayer = GameObject.FindObjectOfType<VideoPlayer>();
 
 			unitychain.transform.SetPositionAndRotation (mposition, mrotation);
 			unitychain.transform.localScale = scaleFactor;
 
-			video_stop.Stop ();
-			video.Play();
+			VideoPlayer.Stop ();
+
+			VideoPlayer_2.Prepare ();
+			VideoPlayer_2.Play();
 
 		}
 	}
