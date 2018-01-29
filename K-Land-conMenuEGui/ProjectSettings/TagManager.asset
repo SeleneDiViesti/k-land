@@ -3,7 +3,6 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-<<<<<<< HEAD
   tags:
   - Pick Up
   - InfoIniziali
@@ -11,9 +10,6 @@ TagManager:
   - proiettile
   - proiettile2
   - proiettile3
-=======
-  tags: []
->>>>>>> 968ad8644f6c471e47c610e2915523d74cce4962
   layers:
   - Default
   - TransparentFX
