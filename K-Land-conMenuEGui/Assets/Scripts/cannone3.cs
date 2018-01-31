@@ -9,6 +9,7 @@ public class cannone3 : MonoBehaviour {
 
     private bool isNear = false;
     private bool isAvaible = false;
+
     private int numProiettili;
     private int i = 0;
     public Animator anim3;
@@ -33,7 +34,7 @@ public class cannone3 : MonoBehaviour {
         Cannone3 = GameObject.Find("Cannone3");
         GuiCatapulta.SetActive(false);
         anim3 = CorpoCannone3.GetComponent<Animator>();
-        //string stringa = GameObject.Find("Count Text").ToString();
+
         //numProiettili = int.Parse(stringa);
         numProiettili = 10;
 

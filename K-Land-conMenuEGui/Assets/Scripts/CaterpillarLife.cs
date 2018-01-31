@@ -1,19 +1,28 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CaterpillarLife : MonoBehaviour {
+    
+    private Animator animationLab1;              //per labitintoPrimoLivello
 
     public int startingHealth = 100;            // The amount of health the enemy starts the game with.
     public int currentHealth;                   // The current health the enemy has.
     public float sinkSpeed = 2.5f;              // The speed at which the enemy sinks through the floor when dead.
+    public Slider caterpillarHealthSlider; 
 
     //ParticleSystem hitParticles;                // Reference to the particle system that plays when the enemy is damaged.
     public GameObject caterpillar;
     CapsuleCollider capsuleCollider;            // Reference to the capsule collider.
     bool isDead=false;                                // Whether the enemy is dead.
     bool isSinking;                             // Whether the enemy has started sinking through the floor.
-    
+
+    private GameObject livelloCompletato;
+
+    static int idleState = Animator.StringToHash("Base Layer.Default");
+    static int locoState = Animator.StringToHash("Base Layer.levelFinished");
+
     void Awake()
     {
         //// Setting up the references.
@@ -24,6 +33,9 @@ public class CaterpillarLife : MonoBehaviour {
 
         // Setting the current health when the enemy first spawns.
         currentHealth = startingHealth;
+
+        livelloCompletato = GameObject.Find("livelloCompletato");
+        animationLab1 = livelloCompletato.GetComponent<Animator>();
     }
 
     void OnTriggerEnter(Collider other)
@@ -55,7 +67,7 @@ public class CaterpillarLife : MonoBehaviour {
 
         // Reduce the current health by the amount of damage sustained.
         currentHealth -= amount;
-
+        caterpillarHealthSlider.value = currentHealth;
         //// Set the position of the particle system to where the hit was sustained.
         //hitParticles.transform.position = hitPoint;
 
@@ -67,6 +79,8 @@ public class CaterpillarLife : MonoBehaviour {
         {
             // ... the enemy is dead.
             Death();
+            animationLab1.SetBool("isFinished", true);
+
         }
     }
 
@@ -77,10 +91,11 @@ public class CaterpillarLife : MonoBehaviour {
         isDead = true;
 
         
+        Destroy(caterpillar, 2f);
 
-       // Destroy(caterpillar, 2f);
 
-        
     }
-    
+
+     
+       
 }
