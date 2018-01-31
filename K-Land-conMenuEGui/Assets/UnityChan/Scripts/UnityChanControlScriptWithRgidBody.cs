@@ -16,7 +16,7 @@ public class UnityChanControlScriptWithRgidBody : MonoBehaviour
 {
 
     public Text countText;                      //per le spille da raccogliere
-    private int count;
+    public int count;
 
     public float animSpeed = 1.5f;				// アニメーション再生速度設定
 	public float lookSmoother = 3.0f;			// a smoothing setting for camera motion
@@ -58,8 +58,9 @@ public class UnityChanControlScriptWithRgidBody : MonoBehaviour
 	{
 		// Animatorコンポーネントを取得する
 		anim = GetComponent<Animator>();
-		// CapsuleColliderコンポーネントを取得する（カプセル型コリジョン）
-		col = GetComponent<CapsuleCollider>();
+       
+        // CapsuleColliderコンポーネントを取得する（カプセル型コリジョン）
+        col = GetComponent<CapsuleCollider>();
 		rb = GetComponent<Rigidbody>();
 		//メインカメラを取得する
 		cameraObject = GameObject.FindWithTag("MainCamera");
@@ -192,7 +193,7 @@ public class UnityChanControlScriptWithRgidBody : MonoBehaviour
 			}
 		}
 
-       
+              
     }
 
     void OnTriggerEnter(Collider other)
