@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CaterpillarLife : MonoBehaviour {
+    
+    private Animator animationLab1;              //per labitintoPrimoLivello
 
     public int startingHealth = 100;            // The amount of health the enemy starts the game with.
     public int currentHealth;                   // The current health the enemy has.
@@ -13,7 +15,10 @@ public class CaterpillarLife : MonoBehaviour {
     CapsuleCollider capsuleCollider;            // Reference to the capsule collider.
     bool isDead=false;                                // Whether the enemy is dead.
     bool isSinking;                             // Whether the enemy has started sinking through the floor.
-    
+
+    static int idleState = Animator.StringToHash("Base Layer.Default");
+    static int locoState = Animator.StringToHash("Base Layer.levelFinished");
+
     void Awake()
     {
         //// Setting up the references.
@@ -24,6 +29,7 @@ public class CaterpillarLife : MonoBehaviour {
 
         // Setting the current health when the enemy first spawns.
         currentHealth = startingHealth;
+        animationLab1 = GetComponent<Animator>();
     }
 
     void OnTriggerEnter(Collider other)
@@ -76,11 +82,13 @@ public class CaterpillarLife : MonoBehaviour {
         // The enemy is dead.
         isDead = true;
 
-        
+        animationLab1.SetBool("isFinished", true);
 
-       // Destroy(caterpillar, 2f);
+        // Destroy(caterpillar, 2f);
 
-        
+
     }
-    
+
+     
+       
 }
