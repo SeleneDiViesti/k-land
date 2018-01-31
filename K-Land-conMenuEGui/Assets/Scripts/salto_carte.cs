@@ -11,8 +11,12 @@ public class salto_carte : MonoBehaviour {
 	public GameObject unitychain;
     public Vector3 scaleFactor = new Vector3(.3f, .3f, .3f);
 
-	public VideoPlayer VideoPlayer_1;
 
+	public VideoPlayer video1;
+
+	void Awake(){
+		video1.GetComponent<VideoPlayer> ();
+	}
 
     void OnTriggerEnter(Collider other)
 	{
@@ -22,16 +26,14 @@ public class salto_carte : MonoBehaviour {
 			mrotation = salto_pos_carta.transform.rotation;
 			unitychain = GameObject.FindGameObjectWithTag ("Player");
 
-			VideoPlayer_1 = GameObject.FindObjectOfType<VideoPlayer>();
-
 			unitychain.transform.SetPositionAndRotation (mposition, mrotation);
             unitychain.transform.localScale = scaleFactor;
 
-			VideoPlayer_1.Play();
+			video1.Play ();
+
 
         }
 	}
-
-
+		
 
 }
