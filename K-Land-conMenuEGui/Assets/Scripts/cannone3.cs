@@ -1,16 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class cannone3 : MonoBehaviour {
     public GameObject GuiCatapulta;
     public GameObject Cannone3;
     public GameObject CorpoCannone3;
-           
+
     private bool isNear = false;
     private bool isAvaible = false;
-    public int numProiettili;
+    private int numProiettili;
     private int i = 0;
     public Animator anim3;
     public AnimatorStateInfo currentBaseState;
@@ -34,16 +33,9 @@ public class cannone3 : MonoBehaviour {
         Cannone3 = GameObject.Find("Cannone3");
         GuiCatapulta.SetActive(false);
         anim3 = CorpoCannone3.GetComponent<Animator>();
-        GameObject countText = GameObject.Find("Count Text");
-        countText.GetComponent<Text>().ToString();
-        // numProiettili = int.Parse(stringa);
-        //numProiettili = 10;
-        //Debug.Log(stringa);
-        numProiettili = System.Convert.ToInt32(countText.GetComponent<Text>().ToString());
-        Debug.Log(System.Convert.ToInt32(countText.GetComponent<Text>().ToString()));
-        Debug.Log(numProiettili);
-
-
+        //string stringa = GameObject.Find("Count Text").ToString();
+        //numProiettili = int.Parse(stringa);
+        numProiettili = 10;
 
         palle = new List<GameObject>();
         //StartCoroutine(SimulateProjectile());
