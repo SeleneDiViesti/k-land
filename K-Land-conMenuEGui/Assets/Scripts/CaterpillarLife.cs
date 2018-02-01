@@ -37,8 +37,8 @@ public class CaterpillarLife : MonoBehaviour {
         livelloCompletato = GameObject.Find("livelloCompletato");
         animationLab1 = livelloCompletato.GetComponent<Animator>();
     }
-
-    void OnTriggerEnter(Collider other)
+    
+        void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("proiettile"))
         {
