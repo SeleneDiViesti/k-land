@@ -9,10 +9,10 @@ public class CaterpillarLife : MonoBehaviour {
 
     public int startingHealth = 100;            // The amount of health the enemy starts the game with.
     public int currentHealth;                   // The current health the enemy has.
-    public float sinkSpeed = 2.5f;              // The speed at which the enemy sinks through the floor when dead.
-    public Slider caterpillarHealthSlider; 
-
-    ParticleSystem hitParticles;                // Reference to the particle system that plays when the enemy is damaged.
+    public Slider caterpillarHealthSlider;
+        
+    public GameObject singleParts;
+    public Transform explosionPosition;
     public GameObject caterpillar;
     CapsuleCollider capsuleCollider;            // Reference to the capsule collider.
     bool isDead=false;                                // Whether the enemy is dead.
@@ -68,19 +68,13 @@ public class CaterpillarLife : MonoBehaviour {
         // Reduce the current health by the amount of damage sustained.
         currentHealth -= amount;
         caterpillarHealthSlider.value = currentHealth;
-        //// Set the position of the particle system to where the hit was sustained.
-        //hitParticles.transform.position = hitPoint;
-
-        //// And play the particles.
-        //hitParticles.Play();
-
+       
         // If the current health is less than or equal to zero...
         if (currentHealth <= 0)
         {
             // ... the enemy is dead.
             Death();
             animationLab1.SetBool("isFinished", true);
-
         }
     }
 
@@ -88,14 +82,9 @@ public class CaterpillarLife : MonoBehaviour {
     void Death()
     {
         // The enemy is dead.
-        isDead = true;
-
-        
-        Destroy(caterpillar, 2f);
-
-
+        isDead = true;             
+        Destroy(caterpillar);
+        singleParts.SetActive(true);
     }
-
-     
-       
+    
 }

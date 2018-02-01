@@ -42,7 +42,7 @@ public class cannone2 : MonoBehaviour
         anim2 = CorpoCannone2.GetComponent<Animator>();
         //string stringa = GameObject.Find("Count Text").ToString();
         //numProiettili = int.Parse(stringa);
-        numProiettili = 10;
+        numProiettili = 15;
 
         palle = new List<GameObject>();
         //StartCoroutine(SimulateProjectile());

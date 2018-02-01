@@ -41,7 +41,7 @@ public class sparaProiettile : MonoBehaviour {
         anim = CorpoCannone.GetComponent<Animator>();
         //string stringa = GameObject.Find("Count Text").ToString();
         //numProiettili = int.Parse(stringa);
-        numProiettili = 10;
+        numProiettili = 15;
 
         palle = new List<GameObject>();
         //StartCoroutine(SimulateProjectile());

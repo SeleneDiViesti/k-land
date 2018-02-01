@@ -36,7 +36,7 @@ public class cannone3 : MonoBehaviour {
         anim3 = CorpoCannone3.GetComponent<Animator>();
 
         //numProiettili = int.Parse(stringa);
-        numProiettili = 10;
+        numProiettili = 15;
 
         palle = new List<GameObject>();
         //StartCoroutine(SimulateProjectile());
