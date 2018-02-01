@@ -12,7 +12,7 @@ public class CaterpillarLife : MonoBehaviour {
     public float sinkSpeed = 2.5f;              // The speed at which the enemy sinks through the floor when dead.
     public Slider caterpillarHealthSlider; 
 
-    //ParticleSystem hitParticles;                // Reference to the particle system that plays when the enemy is damaged.
+    ParticleSystem hitParticles;                // Reference to the particle system that plays when the enemy is damaged.
     public GameObject caterpillar;
     CapsuleCollider capsuleCollider;            // Reference to the capsule collider.
     bool isDead=false;                                // Whether the enemy is dead.

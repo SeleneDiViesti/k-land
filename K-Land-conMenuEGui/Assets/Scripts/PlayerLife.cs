@@ -1,41 +1,38 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Experimental.UIElements;
+using UnityEngine.UI;
 
 public class PlayerLife : MonoBehaviour
 {
-
-   
     public int vitaMax = 100;                            // The amount of health the player starts the game with.
     public int currentHealth;                                   // The current health the player has.
     public Slider LifeSlider;                                 // Reference to the UI's health bar.
-          
-   // PlayerMovement playerMovement;                              // Reference to the player's movement.
-  
+
     bool isDead;                                                // Whether the player is dead.
-    bool damaged;                                               // True when the player gets damaged.
-
-
+    
     void Awake()
     {
-        // Setting up the references.
-      //  anim = GetComponent<Animator>();
-      //  playerAudio = GetComponent<AudioSource>();
-      //  playerMovement = GetComponent<PlayerMovement>();
-      //  playerShooting = GetComponentInChildren<PlayerShooting>();
-
-        // Set the initial health of the player.
         currentHealth = vitaMax;
+        GameObject LS = GameObject.Find("LifeSlider");
+        LifeSlider = LS.GetComponent<Slider>();
     }
 
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("smokeCaterpillar"))
+        {
+            Debug.Log("collisionWithCaterpillar");
+            TakeDamage(10);
+        }
+        else if(other.CompareTag("smoke"))
+        {
+            TakeDamage(5);
+        }
+    }
 
-   
     public void TakeDamage(int amount)
     {
-        // Set the damaged flag so the screen will flash.
-        damaged = true;
-
         // Reduce the current health by the damage amount.
         currentHealth -= amount;
 
@@ -70,6 +67,7 @@ public class PlayerLife : MonoBehaviour
        // playerMovement.enabled = false;
        // playerShooting.enabled = false;
     }
+
     void Update()
     {
         if (currentHealth > vitaMax)

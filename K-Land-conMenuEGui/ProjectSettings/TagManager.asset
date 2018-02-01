@@ -10,6 +10,8 @@ TagManager:
   - proiettile
   - proiettile2
   - proiettile3
+  - smoke
+  - smokeCaterpillar
   layers:
   - Default
   - TransparentFX
