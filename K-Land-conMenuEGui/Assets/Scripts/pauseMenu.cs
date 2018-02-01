@@ -8,6 +8,7 @@ public class pauseMenu : MonoBehaviour {
     public static bool GameIsPaused = false;
     public GameObject pauseUI;
     public GameObject playUI;
+    public GameObject vuoiUscire;
 
     void Start()
     {
@@ -45,6 +46,16 @@ public class pauseMenu : MonoBehaviour {
         playUI.SetActive(false);
         Time.timeScale = 0f;
         GameIsPaused = true;
+    }
+
+    public void Exit()
+    {
+        vuoiUscire.SetActive(true);
+    }
+
+    public void noButtonPressed()
+    {
+        vuoiUscire.SetActive(false);
     }
 
     public void QuitGame()
