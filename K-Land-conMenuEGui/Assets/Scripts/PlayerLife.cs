@@ -6,16 +6,33 @@ using UnityEngine.UI;
 public class PlayerLife : MonoBehaviour
 {
     public int vitaMax = 100;                            // The amount of health the player starts the game with.
-    public int currentHealth;                                   // The current health the player has.
+    public float currentHealth;                                   // The current health the player has.
     public Slider LifeSlider;                                 // Reference to the UI's health bar.
+    public ParticleSystem ps;
+    List<ParticleSystem.Particle> enter = new List<ParticleSystem.Particle>();
+    List<ParticleSystem.Particle> exit = new List<ParticleSystem.Particle>();
 
     bool isDead;                                                // Whether the player is dead.
     
     void Awake()
     {
-        currentHealth = vitaMax;
+        
         GameObject LS = GameObject.Find("LifeSlider");
         LifeSlider = LS.GetComponent<Slider>();
+        ps = GameObject.Find("ring_smoke (1)").GetComponent<ParticleSystem>();
+        currentHealth = LifeSlider.value;
+    }
+
+    //void OnEnable()
+    //{
+    //    ps = GetComponent<ParticleSystem>();
+    //}
+    void OnParticleTrigger()
+    {
+        int numEnter = ps.GetTriggerParticles(ParticleSystemTriggerEventType.Enter, enter);
+        int numExit = ps.GetTriggerParticles(ParticleSystemTriggerEventType.Exit, exit);
+        Debug.Log("Caterpillar");
+        TakeDamage(10);
     }
 
     void OnTriggerEnter(Collider other)
@@ -28,6 +45,11 @@ public class PlayerLife : MonoBehaviour
         else if(other.CompareTag("smoke"))
         {
             TakeDamage(5);
+        }
+        if (other.GetType().ToString() == "ParticleSystem")
+        {
+            Debug.Log("collisionWithCaterpillar");
+            TakeDamage(10);
         }
     }
 
