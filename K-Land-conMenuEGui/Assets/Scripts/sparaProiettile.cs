@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 [RequireComponent(typeof(Animator))]
 
 public class sparaProiettile : MonoBehaviour {
@@ -8,6 +9,9 @@ public class sparaProiettile : MonoBehaviour {
     public GameObject GuiCatapulta;
     public GameObject Cannone;
     public GameObject CorpoCannone;
+    public GameObject ColliderInfoCaterpillarLife;
+
+
 
     private bool isNear = false;
     private bool isAvaible = false;
@@ -29,19 +33,18 @@ public class sparaProiettile : MonoBehaviour {
     //private float gravity = 9.8f;
     private float t = 2f;
 
-
+    public GameObject ColliderInfoCaterpillar;
     // Use this for initialization
     void Start()
     {
-
-        CorpoCannone = GameObject.Find("CorpoCannone");
+        
        // GuiCatapulta = GameObject.Find("GuiCatapulta");
         Cannone = GameObject.Find("Cannone");
         GuiCatapulta.SetActive(false);
         anim = CorpoCannone.GetComponent<Animator>();
-        //string stringa = GameObject.Find("Count Text").ToString();
-        //numProiettili = int.Parse(stringa);
-        numProiettili = 15;
+
+        //numProiettili = 15;
+        
 
         palle = new List<GameObject>();
         //StartCoroutine(SimulateProjectile());
@@ -72,6 +75,7 @@ public class sparaProiettile : MonoBehaviour {
         currentBaseState = anim.GetCurrentAnimatorStateInfo(0);
         if (isNear)
         {
+            numProiettili = ColliderInfoCaterpillarLife.GetComponent<GUILifeFirstEnemy>().GetText();
             if (Input.GetKeyDown(KeyCode.C) && numProiettili > 0)
             {
                 if (currentBaseState.nameHash == idleState)
@@ -82,7 +86,7 @@ public class sparaProiettile : MonoBehaviour {
                 //GameObject palla = Instantiate(projecticle, myPos.transform.position, myPos.transform.rotation, Catapulta.transform);
                 palla = Instantiate(projecticle, myPos.transform.position, myPos.transform.rotation, Cannone.transform);
                 palle.Add(palla);
-                numProiettili = numProiettili - 1;
+                // numProiettili = numProiettili - 1;
                 isAvaible = true;
                 i++;
             }
@@ -95,6 +99,8 @@ public class sparaProiettile : MonoBehaviour {
                     // Destroy(ball, 10);
                  isAvaible = false;
                  anim.SetBool("cKey", false);
+              
+                ColliderInfoCaterpillar.GetComponent<GUILifeFirstEnemy>().updateProiettili(-1);
             }
         }
     }

@@ -17,6 +17,7 @@ public class UnityChanControlScriptWithRgidBody : MonoBehaviour
 
     public Text countText;                      //per le spille da raccogliere
     public int count;
+    public GameObject ColliderInfoCaterpillar;
 
     public float animSpeed = 1.5f;				// アニメーション再生速度設定
 	public float lookSmoother = 3.0f;			// a smoothing setting for camera motion
@@ -205,6 +206,7 @@ public class UnityChanControlScriptWithRgidBody : MonoBehaviour
             other.gameObject.SetActive(false);
             count = count + 1;
             SetCountText();
+            ColliderInfoCaterpillar.GetComponent<GUILifeFirstEnemy>().updateProiettili(1);
         }
     }
     void SetCountText()
@@ -215,6 +217,11 @@ public class UnityChanControlScriptWithRgidBody : MonoBehaviour
       //  {
             //TODO
       //  }
+    }
+
+    public int GetNumberSpille()
+    {
+        return count;
     }
 
     //void OnGUI()

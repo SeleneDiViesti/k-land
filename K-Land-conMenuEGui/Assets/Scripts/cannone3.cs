@@ -6,6 +6,7 @@ public class cannone3 : MonoBehaviour {
     public GameObject GuiCatapulta;
     public GameObject Cannone3;
     public GameObject CorpoCannone3;
+    public GameObject ColliderInfoCaterpillarLife;
 
     private bool isNear = false;
     private bool isAvaible = false;
@@ -24,19 +25,21 @@ public class cannone3 : MonoBehaviour {
 
     private List<GameObject> palle;
 
+    public GameObject ColliderInfoCaterpillar;
+
     //private float firingAngle = 45.0f;
     //private float gravity = 9.8f;
     private float t = 2f;
     // Use this for initialization
     void Start () {
+        
         CorpoCannone3 = GameObject.Find("CorpoCannone3");
         //GuiCatapulta = GameObject.Find("GuiCatapulta");
         Cannone3 = GameObject.Find("Cannone3");
         GuiCatapulta.SetActive(false);
         anim3 = CorpoCannone3.GetComponent<Animator>();
 
-        //numProiettili = int.Parse(stringa);
-        numProiettili = 15;
+       
 
         palle = new List<GameObject>();
         //StartCoroutine(SimulateProjectile());
@@ -63,6 +66,7 @@ public class cannone3 : MonoBehaviour {
         currentBaseState = anim3.GetCurrentAnimatorStateInfo(0);
         if (isNear)
         {
+            numProiettili = numProiettili = ColliderInfoCaterpillarLife.GetComponent<GUILifeFirstEnemy>().GetText();
             if (Input.GetKeyDown(KeyCode.C) && numProiettili > 0)
             {
                 if (currentBaseState.nameHash == idleState)
@@ -73,7 +77,7 @@ public class cannone3 : MonoBehaviour {
                 //GameObject palla = Instantiate(projecticle, myPos.transform.position, myPos.transform.rotation, Catapulta.transform);
                 palla = Instantiate(projecticle, myPos.transform.position, myPos.transform.rotation, Cannone3.transform);
                 palle.Add(palla);
-                numProiettili = numProiettili - 1;
+                //numProiettili = numProiettili - 1;
                 isAvaible = true;
                 i++;
             }
@@ -86,6 +90,8 @@ public class cannone3 : MonoBehaviour {
                 // Destroy(ball, 10);
                 isAvaible = false;
                 anim3.SetBool("cKey", false);
+                
+                ColliderInfoCaterpillar.GetComponent<GUILifeFirstEnemy>().updateProiettili(-1);
             }
         }
     }
