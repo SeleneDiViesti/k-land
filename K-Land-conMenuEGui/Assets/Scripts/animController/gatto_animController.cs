@@ -11,7 +11,7 @@ public class gatto_animController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown ("3")) {
+		if (Input.GetKeyDown ("p")) {
 			anim.Play ("gatto_animation"); 
 		}
 	}

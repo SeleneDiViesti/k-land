@@ -19,6 +19,7 @@ public class incontroGatto : MonoBehaviour {
 
 			unitychain.transform.SetPositionAndRotation (mposition, mrotation);
 
+			// premere p per avviare animazioni
 		}
 	}
 

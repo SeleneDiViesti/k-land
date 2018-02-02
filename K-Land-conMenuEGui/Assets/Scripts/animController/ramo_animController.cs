@@ -11,7 +11,7 @@ public class ramo_animController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown ("1")) {
+		if (Input.GetKeyDown ("p")) {
 			anim.Play ("ramo_albero_animation"); 
 		}
 		// usare lo stesso tasto per l'animazione del ramo in modo che
