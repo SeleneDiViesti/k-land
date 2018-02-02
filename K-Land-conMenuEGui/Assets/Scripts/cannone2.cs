@@ -9,6 +9,7 @@ public class cannone2 : MonoBehaviour
     public GameObject GuiCatapulta;
     public GameObject Cannone2;
     public GameObject CorpoCannone2;
+    public GameObject ColliderInfoCaterpillarLife;
 
     private bool isNear = false;
     private bool isAvaible = false;
@@ -29,20 +30,19 @@ public class cannone2 : MonoBehaviour
     //private float firingAngle = 45.0f;
     //private float gravity = 9.8f;
     private float t = 2f;
-
+    public GameObject ColliderInfoCaterpillar;
 
     // Use this for initialization
     void Start()
     {
-
+        
         CorpoCannone2 = GameObject.Find("CorpoCannone2");
         //GuiCatapulta = GameObject.Find("GuiCatapulta");
         Cannone2 = GameObject.Find("Cannone2");
         GuiCatapulta.SetActive(false);
         anim2 = CorpoCannone2.GetComponent<Animator>();
-        //string stringa = GameObject.Find("Count Text").ToString();
-        //numProiettili = int.Parse(stringa);
-        numProiettili = 15;
+
+        
 
         palle = new List<GameObject>();
         //StartCoroutine(SimulateProjectile());
@@ -70,11 +70,14 @@ public class cannone2 : MonoBehaviour
 
     private void FixedUpdate()
     {
+        
         currentBaseState = anim2.GetCurrentAnimatorStateInfo(0);
         if (isNear)
         {
+            numProiettili= ColliderInfoCaterpillarLife.GetComponent<GUILifeFirstEnemy>().GetText();
             if (Input.GetKeyDown(KeyCode.C) && numProiettili > 0)
             {
+               
                 if (currentBaseState.nameHash == idleState)
                 {
                     anim2.SetBool("cKey", true);
@@ -83,7 +86,7 @@ public class cannone2 : MonoBehaviour
                 //GameObject palla = Instantiate(projecticle, myPos.transform.position, myPos.transform.rotation, Catapulta.transform);
                 palla = Instantiate(projecticle, myPos.transform.position, myPos.transform.rotation, Cannone2.transform);
                 palle.Add(palla);
-                numProiettili = numProiettili - 1;
+                //numProiettili = numProiettili - 1;
                 isAvaible = true;
                 i++;
             }
@@ -96,6 +99,8 @@ public class cannone2 : MonoBehaviour
                 // Destroy(ball, 10);
                 isAvaible = false;
                 anim2.SetBool("cKey", false);
+               
+                ColliderInfoCaterpillar.GetComponent<GUILifeFirstEnemy>().updateProiettili(-1);
             }
         }
     }
