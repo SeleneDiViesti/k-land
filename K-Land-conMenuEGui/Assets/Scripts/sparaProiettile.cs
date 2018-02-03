@@ -10,9 +10,7 @@ public class sparaProiettile : MonoBehaviour {
     public GameObject Cannone;
     public GameObject CorpoCannone;
     public GameObject ColliderInfoCaterpillarLife;
-
-
-
+    
     private bool isNear = false;
     private bool isAvaible = false;
     private int numProiettili;

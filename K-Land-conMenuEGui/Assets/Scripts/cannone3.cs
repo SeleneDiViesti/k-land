@@ -7,6 +7,8 @@ public class cannone3 : MonoBehaviour {
     public GameObject Cannone3;
     public GameObject CorpoCannone3;
     public GameObject ColliderInfoCaterpillarLife;
+    public GameObject Gui;
+    public GameObject unitychain;
 
     private bool isNear = false;
     private bool isAvaible = false;
@@ -38,13 +40,12 @@ public class cannone3 : MonoBehaviour {
         Cannone3 = GameObject.Find("Cannone3");
         GuiCatapulta.SetActive(false);
         anim3 = CorpoCannone3.GetComponent<Animator>();
-
-       
-
+        
         palle = new List<GameObject>();
         //StartCoroutine(SimulateProjectile());
         anim3.Play("New State3");
     }
+
     void SimulateProjectile(GameObject palla)
     {
         Vector3 forceDirection = myTarget.position - myPos.position;
@@ -66,7 +67,7 @@ public class cannone3 : MonoBehaviour {
         currentBaseState = anim3.GetCurrentAnimatorStateInfo(0);
         if (isNear)
         {
-            numProiettili = numProiettili = ColliderInfoCaterpillarLife.GetComponent<GUILifeFirstEnemy>().GetText();
+            numProiettili = ColliderInfoCaterpillarLife.GetComponent<GUILifeFirstEnemy>().GetText();
             if (Input.GetKeyDown(KeyCode.C) && numProiettili > 0)
             {
                 if (currentBaseState.nameHash == idleState)
@@ -99,8 +100,15 @@ public class cannone3 : MonoBehaviour {
     {
         if (other.CompareTag("Player"))
         {
-            GuiCatapulta.SetActive(true);
-            isNear = true;
+            if (unitychain.GetComponent<UnityChanControlScriptWithRgidBody>().GetNumberSpille() >= 20)
+            {
+                GuiCatapulta.SetActive(true);
+                isNear = true;
+            }
+            else
+            {
+                Gui.SetActive(true);
+            }
         }
     }
 
@@ -109,6 +117,7 @@ public class cannone3 : MonoBehaviour {
         if (other.CompareTag("Player"))
         {
             GuiCatapulta.SetActive(false);
+            Gui.SetActive(false);
             isNear = false;
         }
     }

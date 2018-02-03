@@ -7,9 +7,11 @@ public class cannone2 : MonoBehaviour
 {
 
     public GameObject GuiCatapulta;
-    public GameObject Cannone2;
-    public GameObject CorpoCannone2;
+    private GameObject Cannone2;
+    private GameObject CorpoCannone2;
     public GameObject ColliderInfoCaterpillarLife;
+    public GameObject Gui;
+    public GameObject unitychain;
 
     private bool isNear = false;
     private bool isAvaible = false;
@@ -35,19 +37,15 @@ public class cannone2 : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        
         CorpoCannone2 = GameObject.Find("CorpoCannone2");
         //GuiCatapulta = GameObject.Find("GuiCatapulta");
         Cannone2 = GameObject.Find("Cannone2");
         GuiCatapulta.SetActive(false);
         anim2 = CorpoCannone2.GetComponent<Animator>();
-
         
-
         palle = new List<GameObject>();
         //StartCoroutine(SimulateProjectile());
         anim2.Play("New State2");
-
     }
 
     //IEnumerator SimulateProjectile()
@@ -109,8 +107,15 @@ public class cannone2 : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            GuiCatapulta.SetActive(true);
-            isNear = true;
+            if (unitychain.GetComponent<UnityChanControlScriptWithRgidBody>().GetNumberSpille() >= 10)
+            {
+                GuiCatapulta.SetActive(true);
+                isNear = true;
+            }
+            else
+            {
+                Gui.SetActive(true);
+            }
         }
     }
 
@@ -119,6 +124,7 @@ public class cannone2 : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             GuiCatapulta.SetActive(false);
+            Gui.SetActive(false);
             isNear = false;
         }
     }
