@@ -12,6 +12,7 @@ TagManager:
   - proiettile3
   - smoke
   - smokeCaterpillar
+  - rabbit_empty
   layers:
   - Default
   - TransparentFX
