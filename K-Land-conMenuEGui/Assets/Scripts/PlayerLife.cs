@@ -11,8 +11,12 @@ public class PlayerLife : MonoBehaviour
     public Slider LifeSlider;                                 // Reference to the UI's health bar.
 
     public GameObject haiPerso;
+    public Image damageImage;                                   // Reference to an image to flash on the screen on being hurt.
+    public float flashSpeed = 2f;                               // The speed the damageImage will fade at.
+    public Color flashColour = new Color(1f, 0f, 0f, 0.1f);     // The colour the damageImage is set to, to flash.
     bool isDead;                                                // Whether the player is dead.
-    
+    bool damaged;
+
     void Awake()
     {
         GameObject LS = GameObject.Find("LifeSlider");
@@ -34,8 +38,31 @@ public class PlayerLife : MonoBehaviour
        
     }
 
+    void Update()
+    {
+        if (damaged)
+        {
+            // ... set the colour of the damageImage to the flash colour.
+            damageImage.color = flashColour;
+        }
+        // Otherwise...
+        else
+        {
+            // ... transition the colour back to clear.
+            damageImage.color = Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
+        }
+        damaged = false;
+        if (currentHealth > vitaMax)
+        {
+            currentHealth = vitaMax;
+        }
+
+    }
+
     public void TakeDamage(int amount)
     {
+        damaged = true;
+
         // Reduce the current health by the damage amount.
         currentHealth -= amount;
 
@@ -84,15 +111,7 @@ public class PlayerLife : MonoBehaviour
     }
 
 
-    void Update()
-    {
-        
-        if (currentHealth > vitaMax)
-        {
-            currentHealth = vitaMax;
-        }
-
-    }
+   
 }
 
 
