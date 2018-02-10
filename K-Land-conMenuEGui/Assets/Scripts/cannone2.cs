@@ -27,7 +27,7 @@ public class cannone2 : MonoBehaviour
     public Transform myPos;
     public GameObject projecticle;  // drag the cannonball prefab here
 
-    private List<GameObject> palle;
+   // private List<GameObject> palle;
 
     //private float firingAngle = 45.0f;
     //private float gravity = 9.8f;
@@ -43,7 +43,7 @@ public class cannone2 : MonoBehaviour
         GuiCatapulta.SetActive(false);
         anim2 = CorpoCannone2.GetComponent<Animator>();
         
-        palle = new List<GameObject>();
+        //palle = new List<GameObject>();
         //StartCoroutine(SimulateProjectile());
         anim2.Play("New State2");
     }
@@ -80,19 +80,20 @@ public class cannone2 : MonoBehaviour
                 {
                     anim2.SetBool("cKey", true);
                 }
-                GameObject palla;
+                //GameObject palla;
                 //GameObject palla = Instantiate(projecticle, myPos.transform.position, myPos.transform.rotation, Catapulta.transform);
-                palla = Instantiate(projecticle, myPos.transform.position, myPos.transform.rotation, Cannone2.transform);
-                palle.Add(palla);
+                //palla = Instantiate(projecticle, myPos.transform.position, myPos.transform.rotation, Cannone2.transform);
+                //palle.Add(palla);
                 //numProiettili = numProiettili - 1;
                 isAvaible = true;
-                i++;
+                //i++;
             }
 
             if (Input.GetKeyDown(KeyCode.X) && isAvaible)
             {
-
-                SimulateProjectile(palle[i - 1]);
+                GameObject palla = Instantiate(projecticle, myPos.transform.position, myPos.transform.rotation, Cannone2.transform);
+                //SimulateProjectile(palle[i - 1]);
+                SimulateProjectile(palla);
                 // palla.GetComponent<Rigidbody>().velocity = BallisticVel(myTarget, shootAngle);
                 // Destroy(ball, 10);
                 isAvaible = false;

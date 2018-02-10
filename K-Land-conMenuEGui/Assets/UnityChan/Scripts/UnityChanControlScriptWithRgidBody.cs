@@ -234,11 +234,6 @@ public class UnityChanControlScriptWithRgidBody : MonoBehaviour
     void SetCountText()
     {
         countText.text = count.ToString();
-        //TODO ogni x spille--> powre ups
-        //if (count >= 10)
-      //  {
-            //TODO
-      //  }
     }
 
     public int GetNumberSpille()

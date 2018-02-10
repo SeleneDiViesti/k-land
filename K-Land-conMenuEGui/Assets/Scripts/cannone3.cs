@@ -25,7 +25,7 @@ public class cannone3 : MonoBehaviour {
     public Transform myPos;
     public GameObject projecticle;  // drag the cannonball prefab here
 
-    private List<GameObject> palle;
+    //private List<GameObject> palle;
 
     public GameObject ColliderInfoCaterpillar;
 
@@ -41,7 +41,7 @@ public class cannone3 : MonoBehaviour {
         GuiCatapulta.SetActive(false);
         anim3 = CorpoCannone3.GetComponent<Animator>();
         
-        palle = new List<GameObject>();
+        //palle = new List<GameObject>();
         //StartCoroutine(SimulateProjectile());
         anim3.Play("New State3");
     }
@@ -74,19 +74,20 @@ public class cannone3 : MonoBehaviour {
                 {
                     anim3.SetBool("cKey", true);
                 }
-                GameObject palla;
-                //GameObject palla = Instantiate(projecticle, myPos.transform.position, myPos.transform.rotation, Catapulta.transform);
-                palla = Instantiate(projecticle, myPos.transform.position, myPos.transform.rotation, Cannone3.transform);
-                palle.Add(palla);
+                //GameObject palla;
+                ////GameObject palla = Instantiate(projecticle, myPos.transform.position, myPos.transform.rotation, Catapulta.transform);
+                //palla = Instantiate(projecticle, myPos.transform.position, myPos.transform.rotation, Cannone3.transform);
+                //palle.Add(palla);
                 //numProiettili = numProiettili - 1;
                 isAvaible = true;
-                i++;
+                //i++;
             }
 
             if (Input.GetKeyDown(KeyCode.X) && isAvaible)
             {
-
-                SimulateProjectile(palle[i - 1]);
+                GameObject palla = Instantiate(projecticle, myPos.transform.position, myPos.transform.rotation, Cannone3.transform);
+                //SimulateProjectile(palle[i - 1]);
+                SimulateProjectile(palla);
                 // palla.GetComponent<Rigidbody>().velocity = BallisticVel(myTarget, shootAngle);
                 // Destroy(ball, 10);
                 isAvaible = false;

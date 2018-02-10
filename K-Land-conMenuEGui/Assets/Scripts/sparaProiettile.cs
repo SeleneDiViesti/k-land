@@ -25,13 +25,15 @@ public class sparaProiettile : MonoBehaviour {
     public Transform myPos;
     public GameObject projecticle;  // drag the cannonball prefab here
 
-    private List<GameObject> palle;
+    //private List<GameObject> palle;
 
     //private float firingAngle = 45.0f;
     //private float gravity = 9.8f;
     private float t = 2f;
 
     public GameObject ColliderInfoCaterpillar;
+    bool create = false;
+
     // Use this for initialization
     void Start()
     {
@@ -43,7 +45,7 @@ public class sparaProiettile : MonoBehaviour {
 
         //numProiettili = 15;
         
-        palle = new List<GameObject>();
+        //palle = new List<GameObject>();
         //StartCoroutine(SimulateProjectile());
         anim.Play("New State");
 
@@ -79,23 +81,24 @@ public class sparaProiettile : MonoBehaviour {
                 {
                     anim.SetBool("cKey", true);
                 }
-                GameObject palla;
-                //GameObject palla = Instantiate(projecticle, myPos.transform.position, myPos.transform.rotation, Catapulta.transform);
-                palla = Instantiate(projecticle, myPos.transform.position, myPos.transform.rotation, Cannone.transform);
-                palle.Add(palla);
+               // GameObject palla = Instantiate(projecticle, myPos.transform.position, myPos.transform.rotation, Cannone.transform);
+                //palla = Instantiate(projecticle, myPos.transform.position, myPos.transform.rotation, Cannone.transform);
+                //palle.Add(palla);
+                //Debug.Log(palle);
                 // numProiettili = numProiettili - 1;
                 isAvaible = true;
-                i++;
+                //i++;
             }
 
             if (Input.GetKeyDown(KeyCode.X) && isAvaible)
             {
-
-                 SimulateProjectile(palle[i - 1]);
-                    // palla.GetComponent<Rigidbody>().velocity = BallisticVel(myTarget, shootAngle);
-                    // Destroy(ball, 10);
-                 isAvaible = false;
-                 anim.SetBool("cKey", false);
+                GameObject palla = Instantiate(projecticle, myPos.transform.position, myPos.transform.rotation, Cannone.transform);
+                //SimulateProjectile(palle[i - 1]);
+                SimulateProjectile(palla);
+                // palla.GetComponent<Rigidbody>().velocity = BallisticVel(myTarget, shootAngle);
+                // Destroy(ball, 10);
+                isAvaible = false;
+                anim.SetBool("cKey", false);
               
                 ColliderInfoCaterpillar.GetComponent<GUILifeFirstEnemy>().updateProiettili(-1);
             }
@@ -119,4 +122,5 @@ public class sparaProiettile : MonoBehaviour {
             isNear = false;
         }
     }
+    
 }
