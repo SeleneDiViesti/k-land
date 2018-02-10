@@ -19,17 +19,19 @@ public class CaterpillarLife : MonoBehaviour {
     // bool isSinking;                             // Whether the enemy has started sinking through the floor.
     public Image damageImage;                                   // Reference to an image to flash on the screen on being hurt.
     public float flashSpeed = 2f;                               // The speed the damageImage will fade at.
-    public Color flashColour = new Color(1f, 0f, 0f, 0.1f);     // The colour the damageImage is set to, to flash.
+    public Color flashColour = new Color(0f, 0f, 0f, 0.1f);     // The colour the damageImage is set to, to flash.
     bool damaged;
 
     private GameObject livelloCompletato;
     public GameObject rabbit;
+    public GameObject music;
 
     static int idleState = Animator.StringToHash("Base Layer.Default");
     static int locoState = Animator.StringToHash("Base Layer.levelFinished");
-    private Vector3 posRabbit;
-    private Quaternion orientamentoRabbit;
+    
     public GameObject GuiEnemy;
+    private Animator percorsoRabbit;
+    private Animator percorsoMusic;
 
     void Awake()
     {
@@ -44,6 +46,8 @@ public class CaterpillarLife : MonoBehaviour {
 
         livelloCompletato = GameObject.Find("livelloCompletato");
         animationLab1 = livelloCompletato.GetComponent<Animator>();
+        percorsoRabbit = rabbit.GetComponent<Animator>();
+        percorsoMusic = music.GetComponent<Animator>();
         //posRabbit = livelloCompletato.transform.position;
         //orientamentoRabbit=livelloCompletato.transform.rotation;
         //rabbit.transform.SetPositionAndRotation(posRabbit, orientamentoRabbit);
@@ -103,6 +107,8 @@ public class CaterpillarLife : MonoBehaviour {
             // ... the enemy is dead.
             Death();
             animationLab1.SetBool("isFinished", true);
+            percorsoRabbit.Play("percorso_2");
+            percorsoMusic.Play("percorso_2");
         }
     }
 
@@ -113,8 +119,7 @@ public class CaterpillarLife : MonoBehaviour {
         isDead = true;             
         Destroy(caterpillar);
         singleParts.SetActive(true);
-        GuiEnemy.SetActive(false);
-        //rabbit.SetActive(true);
+        GuiEnemy.SetActive(false);      
     }
     
 }

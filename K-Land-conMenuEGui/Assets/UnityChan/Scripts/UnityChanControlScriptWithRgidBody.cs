@@ -19,6 +19,11 @@ public class UnityChanControlScriptWithRgidBody : MonoBehaviour
     public int count;
     public GameObject ColliderInfoCaterpillar;
 
+    public Image pinImage;                                   
+    public float flashSpeed = 2f;                               
+    public Color flashColour = new Color(1f, 0f, 0f, 0.1f);     
+    bool pinned;
+
     public float animSpeed = 1.5f;				// アニメーション再生速度設定
 	public float lookSmoother = 3.0f;			// a smoothing setting for camera motion
 	public bool useCurves = true;				// Mecanimでカーブ調整を使うか設定する
@@ -84,11 +89,23 @@ public class UnityChanControlScriptWithRgidBody : MonoBehaviour
 		anim.speed = animSpeed;								// Animatorのモーション再生速度に animSpeedを設定する
 		currentBaseState = anim.GetCurrentAnimatorStateInfo(0);	// 参照用のステート変数にBase Layer (0)の現在のステートを設定する
 		rb.useGravity = true;//ジャンプ中に重力を切るので、それ以外は重力の影響を受けるようにする
-		
-		
-		
-		// 以下、キャラクターの移動処理
-		velocity = new Vector3(0, 0, v);		// 上下のキー入力からZ軸方向の移動量を取得
+
+
+        if (pinned)
+        {
+            // ... set the colour of the damageImage to the flash colour.
+           pinImage.color = flashColour;
+        }
+        // Otherwise...
+        else
+        {
+            // ... transition the colour back to clear.
+           pinImage.color = Color.Lerp(pinImage.color, Color.clear, flashSpeed * Time.deltaTime);
+        }
+        pinned = false;
+
+        // 以下、キャラクターの移動処理
+        velocity = new Vector3(0, 0, v);		// 上下のキー入力からZ軸方向の移動量を取得
 		// キャラクターのローカル空間での方向に変換
 		velocity = transform.TransformDirection(velocity);
 		//以下のvの閾値は、Mecanim側のトランジションと一緒に調整する
@@ -193,20 +210,25 @@ public class UnityChanControlScriptWithRgidBody : MonoBehaviour
 				anim.SetBool("Rest", false);
 			}
 		}
-
-       
-
-       
     }
 
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Pick Up"))
         {
+            pinned = true;
             other.gameObject.SetActive(false);
             count = count + 1;
             SetCountText();
             ColliderInfoCaterpillar.GetComponent<GUILifeFirstEnemy>().updateProiettili(1);
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Pick Up"))
+        {
+            pinned = false;
         }
     }
     void SetCountText()

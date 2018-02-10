@@ -43,7 +43,6 @@ public class sparaProiettile : MonoBehaviour {
 
         //numProiettili = 15;
         
-
         palle = new List<GameObject>();
         //StartCoroutine(SimulateProjectile());
         anim.Play("New State");
