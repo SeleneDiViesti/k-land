@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class firstEnemy : MonoBehaviour {
     public GameObject gui;
+    public GameObject rabbit;
     // Use this for initialization
     void Awake()
     {
@@ -17,6 +18,7 @@ public class firstEnemy : MonoBehaviour {
         if (other.CompareTag("Player"))
         {
             gui.SetActive(true);
+            rabbit.SetActive(false);
         }
     }
     void OnTriggerExit(Collider other)
