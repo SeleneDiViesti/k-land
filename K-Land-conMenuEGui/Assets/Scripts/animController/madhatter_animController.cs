@@ -15,8 +15,8 @@ public class madhatter_animController : MonoBehaviour {
 	void Update () {
 
 		// se si sceglie di avviare l'animazione con la pressione di un tasto 
-		if (Input.GetKeyDown ("2")) {
-			anim.Play ("madhatter_animation"); 
+		//if (Input.GetKeyDown ("2")) {
+		//	anim.Play ("madhatter_animation"); 
 			// il nome madhatter_animation corrisponde allo stato dell'animator
 		}
 
@@ -28,5 +28,5 @@ public class madhatter_animController : MonoBehaviour {
 
 		// fare in modo che quando l'animazione sia finita che non faccia il loop:
 		//risolto togliendo il loop dal pannello dell'animazione
-	}
+	//}
 }

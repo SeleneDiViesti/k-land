@@ -10,9 +10,13 @@ public class incontroGatto : MonoBehaviour
     private Quaternion mrotation;
     private GameObject unitychain;
     public GameObject InfoStregatto;
+    public GameObject porta;
+    public GameObject ramo;
     private bool isHere = false;
     private GameObject gatto;
     private Animator anim;
+    private Animator anim_porta;
+    private Animator anim_ramo;
     private AnimatorStateInfo currentBaseState;
    
    // private AnimatorStateInfo currentBaseState;
@@ -27,6 +31,8 @@ public class incontroGatto : MonoBehaviour
         mrotation = spostamento_2_finegatto.transform.rotation;
         unitychain = GameObject.FindGameObjectWithTag("Player");
         anim = gatto.GetComponent<Animator>();
+        anim_porta=porta.GetComponent<Animator>();
+        anim_ramo=ramo.GetComponent<Animator>();
         anim.Play("gatto_fermo");
     }
 
@@ -55,7 +61,8 @@ public class incontroGatto : MonoBehaviour
         {
             unitychain.transform.SetPositionAndRotation(mposition, mrotation);
             anim.SetBool("isHere", true);
-           
+            anim_porta.SetBool("open",true);
+            anim_ramo.Play("ramo_albero_animation");
         }
     }
 }
