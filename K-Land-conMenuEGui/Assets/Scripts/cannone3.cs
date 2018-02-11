@@ -9,7 +9,12 @@ public class cannone3 : MonoBehaviour {
     public GameObject ColliderInfoCaterpillarLife;
     public GameObject Gui;
     public GameObject unitychain;
+    public GameObject baseCannone;
+    public GameObject base2Cannone;
 
+    public Material newMaterialRef;
+
+    private bool locked = true;
     private bool isNear = false;
     private bool isAvaible = false;
 
@@ -64,6 +69,14 @@ public class cannone3 : MonoBehaviour {
     // Update is called once per frame
     private void FixedUpdate()
     {
+        if (locked)
+        {
+            if (unitychain.GetComponent<UnityChanControlScriptWithRgidBody>().GetNumberSpille() >= 20)
+            {
+                unlock();
+            }
+        }
+
         currentBaseState = anim3.GetCurrentAnimatorStateInfo(0);
         if (isNear)
         {
@@ -101,7 +114,8 @@ public class cannone3 : MonoBehaviour {
     {
         if (other.CompareTag("Player"))
         {
-            if (unitychain.GetComponent<UnityChanControlScriptWithRgidBody>().GetNumberSpille() >= 20)
+            //if (unitychain.GetComponent<UnityChanControlScriptWithRgidBody>().GetNumberSpille() >= 20)
+            if (!locked)
             {
                 GuiCatapulta.SetActive(true);
                 isNear = true;
@@ -121,5 +135,13 @@ public class cannone3 : MonoBehaviour {
             Gui.SetActive(false);
             isNear = false;
         }
+    }
+
+    void unlock()
+    {
+        CorpoCannone3.GetComponent<MeshRenderer>().material = newMaterialRef;
+        baseCannone.GetComponent<MeshRenderer>().material = newMaterialRef;
+        base2Cannone.GetComponent<MeshRenderer>().material = newMaterialRef;
+        locked = false;
     }
 }
