@@ -9,7 +9,7 @@ public class introVideo : MonoBehaviour {
     public VideoPlayer video;
 
     // Use this for initialization
-    void Start () {
+    void Awake () {
         video.GetComponent<VideoPlayer>();
         video.Play();
     }
@@ -21,5 +21,7 @@ public class introVideo : MonoBehaviour {
         {
             SceneManager.LoadScene("labirinto_scene");
         }
+        //else
+        //    Debug.Log("playing");
   	}
 }

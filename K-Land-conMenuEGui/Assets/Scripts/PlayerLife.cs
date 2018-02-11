@@ -109,9 +109,12 @@ public class PlayerLife : MonoBehaviour
         Time.timeScale = 1f;
         SceneManager.LoadScene("startMenu");
     }
+    public float GetCurrentHealth()
 
+    {
+        return currentHealth;
+    }
 
-   
 }
 
 
