@@ -8,7 +8,8 @@ public class MainMenu : MonoBehaviour {
   
     public void PlayGame()
     {
-            SceneManager.LoadScene("labirinto_scene");
+        // SceneManager.LoadScene("labirinto_scene");
+        SceneManager.LoadScene("videoIntro_scene");
     }
     public void QuitGame()
     {
