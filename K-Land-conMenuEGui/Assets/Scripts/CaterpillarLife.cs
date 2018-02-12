@@ -25,6 +25,7 @@ public class CaterpillarLife : MonoBehaviour {
     private GameObject livelloCompletato;
     public GameObject rabbit;
     public GameObject music;
+    public GameObject damageContainer;
 
     static int idleState = Animator.StringToHash("Base Layer.Default");
     static int locoState = Animator.StringToHash("Base Layer.levelFinished");
@@ -58,6 +59,7 @@ public class CaterpillarLife : MonoBehaviour {
         if (damaged)
         {
             // ... set the colour of the damageImage to the flash colour.
+            damageContainer.SetActive(true);
             damageImage.color = flashColour;
         }
         // Otherwise...
@@ -65,6 +67,7 @@ public class CaterpillarLife : MonoBehaviour {
         {
             // ... transition the colour back to clear.
             damageImage.color = Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
+            damageContainer.SetActive(false); ;
         }
         damaged = false;
     }

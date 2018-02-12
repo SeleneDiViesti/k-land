@@ -16,6 +16,7 @@ public class PlayerLife : MonoBehaviour
     public Color flashColour = new Color(1f, 0f, 0f, 0.1f);     // The colour the damageImage is set to, to flash.
     bool isDead;                                                // Whether the player is dead.
     bool damaged;
+    public GameObject damageContainer;
 
     void Awake()
     {
@@ -43,6 +44,7 @@ public class PlayerLife : MonoBehaviour
     {
         if (damaged)
         {
+            damageContainer.SetActive(true);
             // ... set the colour of the damageImage to the flash colour.
             damageImage.color = flashColour;
         }
@@ -50,6 +52,7 @@ public class PlayerLife : MonoBehaviour
         else
         {
             // ... transition the colour back to clear.
+            damageContainer.SetActive(false);
             damageImage.color = Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
         }
         damaged = false;
