@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class livello3Info : MonoBehaviour {
     public GameObject gui;
+    public GameObject bolla;
 
     void OnTriggerEnter(Collider other)
     {
@@ -17,6 +18,7 @@ public class livello3Info : MonoBehaviour {
         if (other.CompareTag("Player"))
         {
             gui.SetActive(false);
+            bolla.SetActive(true);
         }
     }
     // Use this for initialization
