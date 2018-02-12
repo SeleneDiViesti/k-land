@@ -12,9 +12,9 @@ public class pauseMenu : MonoBehaviour {
 
     void Start()
     {
-        pauseUI = GameObject.Find("GuiPause");
-        playUI = GameObject.Find("GuiPlay");
-        pauseUI.SetActive(false);
+       // pauseUI = GameObject.Find("GuiPause");
+       // playUI = GameObject.Find("GuiPlay");
+       // pauseUI.SetActive(false);
     }
 
 
@@ -25,14 +25,15 @@ public class pauseMenu : MonoBehaviour {
             if (GameIsPaused)
             {
                 Resume();
-            } else
+            }
+            else
             {
                 Pause();
             }
         }
 	}
 
-    public void Resume()
+    void Resume()
     {
         pauseUI.SetActive(false);
         playUI.SetActive(true);
@@ -48,17 +49,17 @@ public class pauseMenu : MonoBehaviour {
         GameIsPaused = true;
     }
 
-    public void Exit()
+    void Exit()
     {
         vuoiUscire.SetActive(true);
     }
 
-    public void noButtonPressed()
+    void noButtonPressed()
     {
         vuoiUscire.SetActive(false);
     }
 
-    public void QuitGame()
+    void QuitGame()
     {
         Application.Quit();
     }
