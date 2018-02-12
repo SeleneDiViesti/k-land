@@ -6,18 +6,18 @@ using UnityEngine.Video;
 
 public class introVideo : MonoBehaviour {
 
-    public VideoPlayer video;
+    public VideoPlayer video_intro;
 
     // Use this for initialization
     void Awake () {
-        video.GetComponent<VideoPlayer>();
-        video.Play();
+        video_intro.GetComponent<VideoPlayer>();
+        video_intro.Play();
     }
 	
 	// Update is called once per frame
 	void Update () {
         //if (!video.isPlaying)
-        if (!video.isPlaying || Input.anyKey)
+        if (!video_intro.isPlaying || Input.anyKey)
         {
             SceneManager.LoadScene("labirinto_scene");
         }
