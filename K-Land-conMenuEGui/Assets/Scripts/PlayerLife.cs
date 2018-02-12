@@ -26,14 +26,15 @@ public class PlayerLife : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("smokeCaterpillar"))
+        //if (other.CompareTag("smokeCaterpillar"))
+        //{
+        //    Debug.Log("collisionWithCaterpillar");
+        //    TakeDamage(10);
+        //}
+       // else
+        if (other.CompareTag("smoke"))
         {
-            Debug.Log("collisionWithCaterpillar");
-            TakeDamage(10);
-        }
-        else if(other.CompareTag("smoke"))
-        {
-            TakeDamage(5);
+            TakeDamage(3);
         }
        
     }

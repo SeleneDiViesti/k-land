@@ -5,17 +5,18 @@ using UnityEngine;
 public class trigger : MonoBehaviour {
 
     GameObject player;
-    public ParticleSystem ps;
+    
 
     // Use this for initialization
     void Start () {
         player = GameObject.FindGameObjectWithTag("Player");
-        ps = GetComponent<ParticleSystem>();
+        
 	}
-    void OnParticleTrigger()
+    void OnTriggerEnter(Collider other)
     {
         //Debug.Log("trigger");
-       // player.GetComponent<PlayerLife>().TakeDamage(10);
+        if (other.CompareTag("Player"))
+       player.GetComponent<PlayerLife>().TakeDamage(6);
     }
     // Update is called once per frame
     void Update () {
