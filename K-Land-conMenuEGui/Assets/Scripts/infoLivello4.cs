@@ -7,6 +7,7 @@ public class infoLivello4 : MonoBehaviour {
     public GameObject gui;
     public GameObject guiFine;
     public GameObject player;
+    public GameObject colliderInfoCuffie;
     public Text parzialeSpille;
     public Text parzialeVita;
     public Text punteggio;
@@ -49,7 +50,8 @@ public class infoLivello4 : MonoBehaviour {
     {
         int numeroSpille= player.GetComponent<UnityChanControlScriptWithRgidBody>().GetNumberSpille();
         float puntiVita= player.GetComponent<PlayerLife>().GetCurrentHealth();
-        puntiVita = puntiVita * 15;
+        float puntiCuffie = colliderInfoCuffie.GetComponent<infoCuffie>().GetCuffie();
+        puntiVita = puntiVita * 15+ puntiCuffie * 13;
         numeroSpille = numeroSpille * 10;
         float spille = (float)numeroSpille;
         tot = spille + puntiVita;

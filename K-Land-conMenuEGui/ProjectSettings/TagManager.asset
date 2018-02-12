@@ -13,6 +13,7 @@ TagManager:
   - smoke
   - smokeCaterpillar
   - rabbit_empty
+  - cuffie
   layers:
   - Default
   - TransparentFX

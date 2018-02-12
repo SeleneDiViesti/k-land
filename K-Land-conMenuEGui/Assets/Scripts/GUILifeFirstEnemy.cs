@@ -15,8 +15,8 @@ public class GUILifeFirstEnemy : MonoBehaviour {
 
     void Start()
     {
-        guiPlayerLife = GameObject.Find("Enemy");
-        guiEnemyLife = GameObject.Find("Life");
+        guiPlayerLife = GameObject.Find("Life");
+        guiEnemyLife = GameObject.Find("Enemy");
         guiPowerUps = GameObject.Find("PowerUps");
         guiEnemyLife.SetActive(false);
         guiPlayerLife.SetActive(false);
