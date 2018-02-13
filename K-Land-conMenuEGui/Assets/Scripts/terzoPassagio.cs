@@ -10,12 +10,13 @@ public class terzoPassagio : MonoBehaviour
     private Vector3 mposition;
     private Quaternion mrotation;
     private GameObject unitychain;
-    public AudioSource audio;
-    
+    public AudioSource song7;
+    public AudioSource song8;
 
     void Start()
     {
-        audio.GetComponent<AudioSource>();
+        song7.GetComponent<AudioSource>();
+        song8.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -29,7 +30,8 @@ public class terzoPassagio : MonoBehaviour
             unitychain = GameObject.FindGameObjectWithTag("Player");
             bolla.SetActive(false);
             unitychain.transform.SetPositionAndRotation(mposition, mrotation);
-            audio.Stop();
+            song7.Stop();
+            song8.Play();
         }
     }
 }

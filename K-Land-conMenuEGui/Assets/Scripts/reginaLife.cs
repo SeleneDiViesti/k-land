@@ -24,11 +24,15 @@ public class reginaLife : MonoBehaviour
     
     public GameObject colliderTv;
     public GameObject fine3;
+    public AudioSource song6;
+    public AudioSource song7;
 
     void Awake()
     {
         // Setting the current health when the enemy first spawns.
         currentHealth = startingHealth;
+        song6.GetComponent<AudioSource>();
+        song7.GetComponent<AudioSource>();
     }
 
     void Update()
@@ -96,6 +100,8 @@ public class reginaLife : MonoBehaviour
         guiRegina.SetActive(false);
         fine3.SetActive(true);
         colliderTv.SetActive(true);
+        song6.Stop();
+        song7.Play();
     }
 
 }
