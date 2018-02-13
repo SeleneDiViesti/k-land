@@ -82,7 +82,7 @@ public class cannone2 : MonoBehaviour
         }
         
         currentBaseState = anim2.GetCurrentAnimatorStateInfo(0);
-        if (isNear)
+        if (isNear && !locked)
         {
             numProiettili= ColliderInfoCaterpillarLife.GetComponent<GUILifeFirstEnemy>().GetText();
             if (Input.GetKeyDown(KeyCode.C) && numProiettili > 0)

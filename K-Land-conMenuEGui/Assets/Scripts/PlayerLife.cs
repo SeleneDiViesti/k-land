@@ -17,6 +17,7 @@ public class PlayerLife : MonoBehaviour
     bool isDead;                                                // Whether the player is dead.
     bool damaged;
     public GameObject damageContainer;
+    public GameObject guiGame;
 
     void Awake()
     {
@@ -91,6 +92,7 @@ public class PlayerLife : MonoBehaviour
         isDead = true;
         haiPerso.SetActive(true);
         Time.timeScale = 0f;
+        
         // Tell the animator that the player is dead.
         // anim.SetTrigger("Die");
 
@@ -113,8 +115,8 @@ public class PlayerLife : MonoBehaviour
         Time.timeScale = 1f;
         SceneManager.LoadScene("startMenu");
     }
-    public float GetCurrentHealth()
 
+    public float GetCurrentHealth()
     {
         return currentHealth;
     }

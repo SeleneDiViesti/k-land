@@ -42,6 +42,7 @@ public class infoCuffie : MonoBehaviour {
             guiReginaLife.SetActive(false);
         }
     }
+
     public void updateCuffie()
     {
         count++;
@@ -57,6 +58,7 @@ public class infoCuffie : MonoBehaviour {
     {
         nCuffie.text = count.ToString();
     }
+
     public int GetCuffie()
     {
         return count;
