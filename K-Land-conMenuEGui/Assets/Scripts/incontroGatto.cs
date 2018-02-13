@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class incontroGatto : MonoBehaviour
 {
-
+    public AudioSource song5;
     private GameObject spostamento_2_finegatto;
     private Vector3 mposition;
     private Quaternion mrotation;
@@ -38,6 +38,7 @@ public class incontroGatto : MonoBehaviour
         anim_ramo=ramo.GetComponent<Animator>();
         anim.Play("gatto_fermo");
         tv2 = Tv.GetComponent<Animator>();
+        song5.GetComponent<AudioSource>();
     }
 
   void OnTriggerEnter(Collider other)
@@ -47,6 +48,7 @@ public class incontroGatto : MonoBehaviour
             InfoStregatto.SetActive(true);
             isHere = true;
             anim.SetBool("isHere",true);
+            song5.Play();
         }
     }
 

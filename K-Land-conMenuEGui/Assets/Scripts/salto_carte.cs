@@ -6,9 +6,7 @@ using UnityEngine.Video;
 public class salto_carte : MonoBehaviour
 {
 
-    //public GameObject salto_pos_carta;
-    //public Vector3 mposition;
-    //public Quaternion mrotation;
+    public AudioSource song4;
     public GameObject unitychain;
     public Vector3 scaleFactor = new Vector3(.3f, .3f, .3f);
     private Animator anim;
@@ -27,6 +25,7 @@ public class salto_carte : MonoBehaviour
         anim = tappeto_molla.GetComponent<Animator>();
         anim.Play("terra");
         unitychain = GameObject.FindGameObjectWithTag("Player");
+        song4.GetComponent<AudioSource>();
     }
 
     void OnTriggerEnter(Collider other)
@@ -42,7 +41,7 @@ public class salto_carte : MonoBehaviour
 
             video1.Play();
             anim.SetBool("transition", true);
-
+            song4.Stop();
         }
     }
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class CaterpillarLife : MonoBehaviour {
     
@@ -34,6 +35,8 @@ public class CaterpillarLife : MonoBehaviour {
     private Quaternion mrotation;
     private Animator tv1;
 
+    public AudioSource song2;
+    public AudioSource song3;
     static int idleState = Animator.StringToHash("Base Layer.Default");
     static int locoState = Animator.StringToHash("Base Layer.levelFinished");
     
@@ -56,9 +59,9 @@ public class CaterpillarLife : MonoBehaviour {
         animationLab1 = livelloCompletato.GetComponent<Animator>();
         percorsoRabbit = rabbit.GetComponent<Animator>();
         percorsoMusic = music.GetComponent<Animator>();
-        //posRabbit = livelloCompletato.transform.position;
-        //orientamentoRabbit=livelloCompletato.transform.rotation;
-        //rabbit.transform.SetPositionAndRotation(posRabbit, orientamentoRabbit);
+        song3.GetComponent<AudioSource>();
+        song2.GetComponent<AudioSource>();
+        
     }
 
     void Update()
@@ -137,6 +140,8 @@ public class CaterpillarLife : MonoBehaviour {
         mrotation = colliderTv1.transform.rotation;
         unitychain.transform.SetPositionAndRotation(mposition, mrotation);
         tv1.Play("tv_animation");
+        song2.Stop();
+        song3.Play();
     }
     
 }
