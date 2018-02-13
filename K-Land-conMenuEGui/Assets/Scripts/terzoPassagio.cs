@@ -5,10 +5,18 @@ using UnityEngine;
 public class terzoPassagio : MonoBehaviour
 {
 
-    public GameObject inizio4;
-    public Vector3 mposition;
-    public Quaternion mrotation;
-    public GameObject unitychain;
+    private GameObject inizio4;
+    public GameObject bolla;
+    private Vector3 mposition;
+    private Quaternion mrotation;
+    private GameObject unitychain;
+    public AudioSource audio;
+    
+
+    void Start()
+    {
+        audio.GetComponent<AudioSource>();
+    }
 
     // Update is called once per frame
     void OnTriggerEnter(Collider other)
@@ -19,7 +27,9 @@ public class terzoPassagio : MonoBehaviour
             mposition = inizio4.transform.position;
             mrotation = inizio4.transform.rotation;
             unitychain = GameObject.FindGameObjectWithTag("Player");
+            bolla.SetActive(false);
             unitychain.transform.SetPositionAndRotation(mposition, mrotation);
+            audio.Stop();
         }
     }
 }

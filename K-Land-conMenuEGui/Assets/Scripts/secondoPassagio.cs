@@ -10,6 +10,12 @@ public class secondoPassagio : MonoBehaviour
     public Quaternion mrotation;
     public GameObject unitychain;
     private Vector3 scaleFactor = new Vector3(1,1,1);
+    public AudioSource audio;
+
+    void Start()
+    {
+        audio.GetComponent<AudioSource>();
+    }
 
     // Update is called once per frame
     void OnTriggerEnter(Collider other)
@@ -22,6 +28,7 @@ public class secondoPassagio : MonoBehaviour
             unitychain = GameObject.FindGameObjectWithTag("Player");
             unitychain.transform.SetPositionAndRotation(mposition, mrotation);
             unitychain.transform.localScale = scaleFactor;
+            audio.Play();
         }
     }
 }

@@ -27,6 +27,13 @@ public class CaterpillarLife : MonoBehaviour {
     public GameObject music;
     public GameObject damageContainer;
 
+    public GameObject Tv;
+    public GameObject unitychain;
+    public GameObject colliderTv1;
+    private Vector3 mposition;
+    private Quaternion mrotation;
+    private Animator tv1;
+
     static int idleState = Animator.StringToHash("Base Layer.Default");
     static int locoState = Animator.StringToHash("Base Layer.levelFinished");
     
@@ -41,7 +48,7 @@ public class CaterpillarLife : MonoBehaviour {
         //enemyAudio = GetComponent<AudioSource>();
         //hitParticles = GetComponentInChildren<ParticleSystem>();
         capsuleCollider = caterpillar. GetComponent<CapsuleCollider>();
-
+        tv1=Tv.GetComponent<Animator>();
         // Setting the current health when the enemy first spawns.
         currentHealth = startingHealth;
 
@@ -125,7 +132,11 @@ public class CaterpillarLife : MonoBehaviour {
         isDead = true;             
         Destroy(caterpillar);
         singleParts.SetActive(true);
-        GuiEnemy.SetActive(false);      
+        GuiEnemy.SetActive(false);
+        mposition = colliderTv1.transform.position;
+        mrotation = colliderTv1.transform.rotation;
+        unitychain.transform.SetPositionAndRotation(mposition, mrotation);
+        tv1.Play("tv_animation");
     }
     
 }

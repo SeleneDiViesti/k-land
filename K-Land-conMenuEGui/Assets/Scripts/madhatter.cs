@@ -7,6 +7,7 @@ public class madhatter : MonoBehaviour {
     private Animator anim;
     private AnimatorStateInfo currentBaseState;
     private GameObject madHatter;
+    public AudioSource audio;
 
     static int idleState = Animator.StringToHash("Base Layer.fermo");
     static int animazione = Animator.StringToHash("Base Layer.madhatter_animation");
@@ -17,6 +18,7 @@ public class madhatter : MonoBehaviour {
         madHatter = GameObject.Find("madhatter ");
         anim = madHatter.GetComponent<Animator>();
         anim.Play("fermo");
+        audio.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -38,6 +40,7 @@ public class madhatter : MonoBehaviour {
         if (other.CompareTag("Player"))
         {
             InfoCappellaio.SetActive(true);
+            audio.Stop();
         }
     }
 

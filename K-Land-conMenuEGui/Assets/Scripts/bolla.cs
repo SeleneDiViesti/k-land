@@ -16,11 +16,13 @@ public class bolla : MonoBehaviour {
     void Update()
     {
     }
+
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("cuffie"))
         {
             colliderInfoCuffie.GetComponent<infoCuffie>().updateCuffie();
+            other.enabled = false;
         }
     }
     //void OnTriggerEnter(Collider other)

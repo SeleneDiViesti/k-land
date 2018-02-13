@@ -16,8 +16,11 @@ public class incontroGatto : MonoBehaviour
     private GameObject gatto;
     private Animator anim;
     private Animator anim_porta;
+    private Animator tv2;
+    public GameObject Tv;
     private Animator anim_ramo;
     private AnimatorStateInfo currentBaseState;
+    public GameObject fine2;
    
    // private AnimatorStateInfo currentBaseState;
     static int idleState = Animator.StringToHash("Base Layer.gatto_fermo");
@@ -34,9 +37,10 @@ public class incontroGatto : MonoBehaviour
         anim_porta=porta.GetComponent<Animator>();
         anim_ramo=ramo.GetComponent<Animator>();
         anim.Play("gatto_fermo");
+        tv2 = Tv.GetComponent<Animator>();
     }
 
-        void OnTriggerEnter(Collider other)
+  void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
@@ -63,6 +67,8 @@ public class incontroGatto : MonoBehaviour
             anim.SetBool("isHere", true);
             anim_porta.SetBool("open",true);
             anim_ramo.Play("ramo_albero_animation");
+            tv2.Play("tv_animation");
+            fine2.SetActive(true);
         }
     }
 }
