@@ -9,9 +9,9 @@ public class introVideo : MonoBehaviour {
     public VideoPlayer video_intro;
 
     // Use this for initialization
-    void Awake () {
+    void Start () {
         video_intro.GetComponent<VideoPlayer>();
-        video_intro.Play();
+       // video_intro.Play();
     }
 	
 	// Update is called once per frame
@@ -23,5 +23,5 @@ public class introVideo : MonoBehaviour {
         }
         //else
         //    Debug.Log("playing");
-  	}
+    }
 }
