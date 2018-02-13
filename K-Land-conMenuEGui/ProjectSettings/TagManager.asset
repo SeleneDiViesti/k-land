@@ -14,6 +14,7 @@ TagManager:
   - smokeCaterpillar
   - rabbit_empty
   - cuffie
+  - heart
   layers:
   - Default
   - TransparentFX

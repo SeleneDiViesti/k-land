@@ -7,7 +7,8 @@ public class tv3_script : MonoBehaviour {
     private Animator tv3;
     public GameObject Tv;
     // Use this for initialization
-    void Start () {
+    void Start ()
+    {
         tv3 = Tv.GetComponent<Animator>();
     }
     void OnTriggerEnter(Collider other)

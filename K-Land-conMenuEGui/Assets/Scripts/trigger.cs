@@ -15,7 +15,7 @@ public class trigger : MonoBehaviour {
     void OnTriggerEnter(Collider other)
     {
         //Debug.Log("trigger");
-        if (other.CompareTag("Player"))
+       if (other.CompareTag("Player"))
        player.GetComponent<PlayerLife>().TakeDamage(6);
     }
     // Update is called once per frame

@@ -9,6 +9,7 @@ public class infoCuffie : MonoBehaviour {
     public Text nCuffie;
     private int count;
     public GameObject guiPlayerLife;
+    public GameObject guiReginaLife;
 
     void Start()
     {
@@ -27,6 +28,7 @@ public class infoCuffie : MonoBehaviour {
         if (other.CompareTag("Player"))
         {
             cuffie.SetActive(true);
+            guiReginaLife.SetActive(true);
             guiPlayerLife.SetActive(true);
         }
 
@@ -37,6 +39,7 @@ public class infoCuffie : MonoBehaviour {
         {
             cuffie.SetActive(false);
             guiPlayerLife.SetActive(false);
+            guiReginaLife.SetActive(false);
         }
     }
     public void updateCuffie()

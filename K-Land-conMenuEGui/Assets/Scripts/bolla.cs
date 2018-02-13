@@ -24,6 +24,7 @@ public class bolla : MonoBehaviour {
             colliderInfoCuffie.GetComponent<infoCuffie>().updateCuffie();
             other.enabled = false;
         }
+      
     }
     //void OnTriggerEnter(Collider other)
     //{
