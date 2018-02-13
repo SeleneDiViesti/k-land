@@ -10,9 +10,9 @@ public class attiva_video_sfera : MonoBehaviour {
 
 	void Awake(){
 		video.GetComponent<VideoPlayer> ();
-
+		anim = GetComponent<Animator> ();
 	}
-
+		
 	void OnTriggerEnter(Collider other)
 	{
 		if (other.CompareTag("Player"))
