@@ -62,8 +62,6 @@ public class sparaCuori : MonoBehaviour {
                 GameObject heart = Instantiate(cuore, myPos.transform.position, myPos.transform.rotation, bacchetta.transform);
                 
                 SimulateProjectile(heart);
-                // palla.GetComponent<Rigidbody>().velocity = BallisticVel(myTarget, shootAngle);
-                // Destroy(ball, 10);
             }
         }
     }

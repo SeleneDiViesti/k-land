@@ -91,6 +91,7 @@ public class PlayerLife : MonoBehaviour
         // Set the death flag so this function won't be called again.
         isDead = true;
         haiPerso.SetActive(true);
+        guiGame.SetActive(false);
         Time.timeScale = 0f;
         
         // Tell the animator that the player is dead.

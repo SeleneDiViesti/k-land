@@ -104,10 +104,9 @@ public class cannone2 : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.X) && isAvaible)
             {
                 GameObject palla = Instantiate(projecticle, myPos.transform.position, myPos.transform.rotation, Cannone2.transform);
-                //SimulateProjectile(palle[i - 1]);
+               
                 SimulateProjectile(palla);
-                // palla.GetComponent<Rigidbody>().velocity = BallisticVel(myTarget, shootAngle);
-                // Destroy(ball, 10);
+                
                 isAvaible = false;
                 anim2.SetBool("cKey", false);
                
