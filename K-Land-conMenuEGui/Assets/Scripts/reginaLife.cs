@@ -57,12 +57,12 @@ public class reginaLife : MonoBehaviour
     {
         if (other.CompareTag("heartBacchetta"))
         {
-            TakeDamage(8);
+            TakeDamage(3);
             Destroy(other.gameObject);
         }
         if (other.CompareTag("heartBacchetta2"))
         {
-            TakeDamage(15);
+            TakeDamage(5);
             Destroy(other.gameObject);
         }
     }
