@@ -49,28 +49,29 @@ public class sfera_2_animController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKeyDown ("c")) {
+			
+			Sphere_1.Play ("fermo1");
 			video_s_1.Stop ();
-			Sphere_1.enabled = false;
 
-			Sphere_3.enabled = false;
+			Sphere_3.Play ("fermo3");
 			video_s_3.Stop ();
 
-			Sphere_4.enabled = false;
+			Sphere_4.Play ("fermo4");
 			video_s_4.Stop ();
 
-			Sphere_5.enabled = false;
+			Sphere_5.Play ("fermo5");
 			video_s_5.Stop ();
 
-			Sphere_6.enabled = false;
+			Sphere_6.Play ("fermo6");
 			video_s_6.Stop ();
 
-			Sphere_7.enabled = false;
+			Sphere_7.Play ("fermo7");
 			video_s_7.Stop ();
 
-			Sphere_8.enabled = false;
+			Sphere_8.Play ("fermo8");
 			video_s_8.Stop ();
 
-			Sphere_2.enabled = true;
+			//Sphere_2.enabled = true;
 
 			video_s_2.Play ();
 			// animazione sfera 
