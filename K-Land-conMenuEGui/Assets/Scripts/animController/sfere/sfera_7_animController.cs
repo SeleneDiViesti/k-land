@@ -62,6 +62,7 @@ public class sfera_7_animController : MonoBehaviour {
 		}
 
 		if (Input.GetKeyDown ("g")) {
+			Sphere_7.enabled = true;
 
 			video_s_7.Play ();
 			Sphere_7.Play("sfera_7_animation");

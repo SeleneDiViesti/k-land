@@ -40,6 +40,8 @@ public class sfera_3_animController : MonoBehaviour {
 		}
 
 		if (Input.GetKeyDown ("v")) {
+			Sphere_3.enabled = true;
+
 			video_s_3.Play ();
 			// animazione sfera 
 			Sphere_3.Play("sfera_3_animation");

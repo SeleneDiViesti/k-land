@@ -50,7 +50,8 @@ public class sfera_5_animController : MonoBehaviour {
 		}
 
 		if (Input.GetKeyDown ("d")) {
-			
+			Sphere_5.enabled = true;
+
 			video_s_5.Play ();
 			Sphere_5.Play("sfera_5_animation");
 

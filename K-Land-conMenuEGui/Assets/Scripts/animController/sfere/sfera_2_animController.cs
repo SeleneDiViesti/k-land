@@ -32,7 +32,8 @@ public class sfera_2_animController : MonoBehaviour {
 		}
 
 		if (Input.GetKeyDown ("c")) {
-			
+			Sphere_2.enabled = true;
+
 			video_s_2.Play ();
 		
 			Sphere_2.Play("sfera_2_animation");

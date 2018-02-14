@@ -63,6 +63,7 @@ public class sfera_8_animController : MonoBehaviour {
 
 		}
 		if (Input.GetKeyDown ("h")) {
+			Sphere_8.enabled = true;
 
 			video_s_8.Play ();
 			Sphere_8.Play("sfera_8_animation");

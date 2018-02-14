@@ -20,7 +20,9 @@ public class sfera_1_animController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown ("x")) {			
+		if (Input.GetKeyDown ("x")) {	
+			Sphere_1.enabled = true;
+
 			video_s_1.Play ();
 
 			Sphere_1.Play("sfera_animation");

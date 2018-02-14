@@ -44,6 +44,7 @@ public class sfera_4_animController : MonoBehaviour {
 
 		}
 		if (Input.GetKeyDown ("b")) {
+			Sphere_4.enabled = true;
 
 			video_s_4.Play ();
 			Sphere_4.Play("sfera_4_animation");
