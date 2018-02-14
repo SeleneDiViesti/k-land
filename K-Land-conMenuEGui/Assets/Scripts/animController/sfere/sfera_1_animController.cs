@@ -49,10 +49,12 @@ public class sfera_1_animController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKeyDown ("x")) {
+			
 			Sphere_2.enabled = false;
 			video_s_2.Stop ();
 
 			Sphere_3.enabled = false;
+			 //Sphere_3.StopPlayback();
 			video_s_3.Stop ();
 
 			Sphere_4.enabled = false;
