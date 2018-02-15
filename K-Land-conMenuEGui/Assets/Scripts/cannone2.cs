@@ -82,6 +82,7 @@ public class cannone2 : MonoBehaviour
         }
         
         currentBaseState = anim2.GetCurrentAnimatorStateInfo(0);
+        
         if (isNear && !locked)
         {
             numProiettili= ColliderInfoCaterpillarLife.GetComponent<GUILifeFirstEnemy>().GetText();
@@ -92,24 +93,19 @@ public class cannone2 : MonoBehaviour
                 {
                     anim2.SetBool("cKey", true);
                 }
-                //GameObject palla;
-                //GameObject palla = Instantiate(projecticle, myPos.transform.position, myPos.transform.rotation, Catapulta.transform);
-                //palla = Instantiate(projecticle, myPos.transform.position, myPos.transform.rotation, Cannone2.transform);
-                //palle.Add(palla);
-                //numProiettili = numProiettili - 1;
                 isAvaible = true;
-                //i++;
+               
             }
 
             if (Input.GetKeyDown(KeyCode.X) && isAvaible)
             {
                 GameObject palla = Instantiate(projecticle, myPos.transform.position, myPos.transform.rotation, Cannone2.transform);
-               
+
                 SimulateProjectile(palla);
-                
+
                 isAvaible = false;
                 anim2.SetBool("cKey", false);
-               
+
                 ColliderInfoCaterpillar.GetComponent<GUILifeFirstEnemy>().updateProiettili(-1);
             }
         }
@@ -119,8 +115,7 @@ public class cannone2 : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-           // if (unitychain.GetComponent<UnityChanControlScriptWithRgidBody>().GetNumberSpille() >= 10)
-           if(!locked)
+            if(!locked)
             {
                 GuiCatapulta.SetActive(true);
                 isNear = true;

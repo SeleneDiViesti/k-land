@@ -46,10 +46,7 @@ public class CaterpillarLife : MonoBehaviour {
 
     void Awake()
     {
-        //// Setting up the references.
-        //anim = GetComponent<Animator>();
-        //enemyAudio = GetComponent<AudioSource>();
-        //hitParticles = GetComponentInChildren<ParticleSystem>();
+        
         capsuleCollider = caterpillar. GetComponent<CapsuleCollider>();
         tv1=Tv.GetComponent<Animator>();
         // Setting the current health when the enemy first spawns.
@@ -96,7 +93,7 @@ public class CaterpillarLife : MonoBehaviour {
         }
         if (other.CompareTag("proiettile3"))
         {
-            TakeDamage(10);
+            TakeDamage(100);
             Destroy(other.gameObject);
         }
     }
@@ -141,20 +138,18 @@ public class CaterpillarLife : MonoBehaviour {
         song3.Play();
         mposition = colliderTv1.transform.position;
         mrotation = colliderTv1.transform.rotation;
+        StartCoroutine(DelayedCoroutine());
+        
         unitychain.transform.SetPositionAndRotation(mposition, mrotation);
         tv1.Play("tv_animation");
-        //StartCoroutine(wait());
-
+            
     }
 
-    //IEnumerator wait()
-    //{
-    //    yield return new WaitForSeconds(2);
-    //    mposition = colliderTv1.transform.position;
-    //    mrotation = colliderTv1.transform.rotation;
-    //    unitychain.transform.SetPositionAndRotation(mposition, mrotation);
-    //    tv1.Play("tv_animation");
-    //}
+    private IEnumerator DelayedCoroutine()
+    {
+        yield return new WaitForSecondsRealtime(5f); 
+    }
+
 
 
 
