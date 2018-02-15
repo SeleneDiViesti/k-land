@@ -93,7 +93,8 @@ public class CaterpillarLife : MonoBehaviour {
         }
         if (other.CompareTag("proiettile3"))
         {
-            TakeDamage(100);
+            TakeDamage(10);
+            //TakeDamage(100);
             Destroy(other.gameObject);
         }
     }
