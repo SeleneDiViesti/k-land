@@ -63,7 +63,7 @@ public class CaterpillarLife : MonoBehaviour {
         song2.GetComponent<AudioSource>();
         
     }
-
+   
     void Update()
     {
         if (damaged)
@@ -136,12 +136,27 @@ public class CaterpillarLife : MonoBehaviour {
         Destroy(caterpillar);
         singleParts.SetActive(true);
         GuiEnemy.SetActive(false);
+        
+        song2.Stop();
+        song3.Play();
         mposition = colliderTv1.transform.position;
         mrotation = colliderTv1.transform.rotation;
         unitychain.transform.SetPositionAndRotation(mposition, mrotation);
         tv1.Play("tv_animation");
-        song2.Stop();
-        song3.Play();
+        //StartCoroutine(wait());
+
     }
-    
+
+    //IEnumerator wait()
+    //{
+    //    yield return new WaitForSeconds(2);
+    //    mposition = colliderTv1.transform.position;
+    //    mrotation = colliderTv1.transform.rotation;
+    //    unitychain.transform.SetPositionAndRotation(mposition, mrotation);
+    //    tv1.Play("tv_animation");
+    //}
+
+
+
+
 }
