@@ -7,15 +7,15 @@ public class cannone2 : MonoBehaviour
 {
 
     public GameObject GuiCatapulta;
-    private GameObject Cannone2;
-    private GameObject CorpoCannone2;
+    public GameObject Cannone2;
+    public GameObject CorpoCannone2;
     public GameObject ColliderInfoCaterpillarLife;
     public GameObject Gui;
     public GameObject unitychain;
     public GameObject baseCannone;
-    public GameObject base2Cannone;
+    //public GameObject base2Cannone;
 
-    public Material newMaterialRef;
+   // public Material newMaterialRef;
 
     private bool locked = true;
     private bool isNear = false;
@@ -42,9 +42,9 @@ public class cannone2 : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        CorpoCannone2 = GameObject.Find("CorpoCannone2");
-        //GuiCatapulta = GameObject.Find("GuiCatapulta");
-        Cannone2 = GameObject.Find("Cannone2");
+        //CorpoCannone2 = GameObject.Find("CorpoCannone2");
+        ////GuiCatapulta = GameObject.Find("GuiCatapulta");
+        //Cannone2 = GameObject.Find("Cannone2");
         GuiCatapulta.SetActive(false);
         anim2 = CorpoCannone2.GetComponent<Animator>();
         
@@ -139,9 +139,9 @@ public class cannone2 : MonoBehaviour
 
     void unlock()
     {
-        CorpoCannone2.GetComponent<MeshRenderer>().material= newMaterialRef;
-        baseCannone.GetComponent<MeshRenderer>().material = newMaterialRef;
-        base2Cannone.GetComponent<MeshRenderer>().material = newMaterialRef;
+        //CorpoCannone2.GetComponent<MeshRenderer>().material= newMaterialRef;
+        //baseCannone.GetComponent<MeshRenderer>().material = newMaterialRef;
+        //base2Cannone.GetComponent<MeshRenderer>().material = newMaterialRef;
         locked = false;
     }
 }

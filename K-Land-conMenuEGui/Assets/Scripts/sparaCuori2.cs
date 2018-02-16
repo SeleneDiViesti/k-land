@@ -10,7 +10,7 @@ public class sparaCuori2 : MonoBehaviour {
     public GameObject Gui;
     public GameObject bacchetta;
     
-    public Material newMaterialRef;
+    //public Material newMaterialRef;
 
     private bool locked = true;
     private bool isNear = false;
@@ -99,7 +99,7 @@ public class sparaCuori2 : MonoBehaviour {
 
     void unlock()
     {
-        bacchetta.GetComponent<MeshRenderer>().material = newMaterialRef;
+        //bacchetta.GetComponent<MeshRenderer>().material = newMaterialRef;
         
         locked = false;
     }

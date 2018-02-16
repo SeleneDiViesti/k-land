@@ -10,9 +10,9 @@ public class cannone3 : MonoBehaviour {
     public GameObject Gui;
     public GameObject unitychain;
     public GameObject baseCannone;
-    public GameObject base2Cannone;
+    //public GameObject base2Cannone;
 
-    public Material newMaterialRef;
+    //public Material newMaterialRef;
 
     private bool locked = true;
     private bool isNear = false;
@@ -40,9 +40,9 @@ public class cannone3 : MonoBehaviour {
     // Use this for initialization
     void Start () {
         
-        CorpoCannone3 = GameObject.Find("CorpoCannone3");
-        //GuiCatapulta = GameObject.Find("GuiCatapulta");
-        Cannone3 = GameObject.Find("Cannone3");
+        //CorpoCannone3 = GameObject.Find("CorpoCannone3");
+        ////GuiCatapulta = GameObject.Find("GuiCatapulta");
+        //Cannone3 = GameObject.Find("Cannone3");
         GuiCatapulta.SetActive(false);
         anim3 = CorpoCannone3.GetComponent<Animator>();
         
@@ -139,9 +139,9 @@ public class cannone3 : MonoBehaviour {
 
     void unlock()
     {
-        CorpoCannone3.GetComponent<MeshRenderer>().material = newMaterialRef;
-        baseCannone.GetComponent<MeshRenderer>().material = newMaterialRef;
-        base2Cannone.GetComponent<MeshRenderer>().material = newMaterialRef;
+        //CorpoCannone3.GetComponent<MeshRenderer>().material = newMaterialRef;
+        //baseCannone.GetComponent<MeshRenderer>().material = newMaterialRef;
+        //base2Cannone.GetComponent<MeshRenderer>().material = newMaterialRef;
         locked = false;
     }
 }

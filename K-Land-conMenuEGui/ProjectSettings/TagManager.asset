@@ -17,6 +17,7 @@ TagManager:
   - heart
   - heartBacchetta
   - heartBacchetta2
+  - madhatter
   layers:
   - Default
   - TransparentFX

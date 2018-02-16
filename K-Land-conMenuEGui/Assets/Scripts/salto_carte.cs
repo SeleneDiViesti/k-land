@@ -5,10 +5,10 @@ using UnityEngine.Video;
 
 public class salto_carte : MonoBehaviour
 {
-
+    public GameObject gui;
     public AudioSource song4;
     public GameObject unitychain;
-    public Vector3 scaleFactor = new Vector3(.3f, .3f, .3f);
+    public Vector3 scaleFactor = new Vector3(.2f, .2f, .2f);
     private Animator anim;
     private AnimatorStateInfo currentBaseState;
     private GameObject tappeto_molla;
@@ -42,6 +42,7 @@ public class salto_carte : MonoBehaviour
             video1.Play();
             anim.SetBool("transition", true);
             song4.Stop();
+            gui.SetActive(false);
         }
     }
 

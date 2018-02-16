@@ -27,8 +27,8 @@ public class ThirdPersonCamera : MonoBehaviour
 		if(GameObject.Find ("FrontPos"))
 			frontPos = GameObject.Find ("FrontPos").transform;
 
-		if(GameObject.Find ("JumpPos"))
-			jumpPos = GameObject.Find ("JumpPos").transform;
+		//if(GameObject.Find ("JumpPos"))
+		//	jumpPos = GameObject.Find ("JumpPos").transform;
 
         if (GameObject.Find("UpPos"))
             upPos = GameObject.Find("UpPos").transform;
@@ -48,11 +48,11 @@ public class ThirdPersonCamera : MonoBehaviour
 			setCameraPositionFrontView();
 		}
 		
-		else if(Input.GetButton("Fire2"))	//Alt
-		{	
-			// Change Jump Camera
-			setCameraPositionJumpView();
-		}
+		//else if(Input.GetButton("Fire2"))	//Alt
+		//{	
+		//	// Change Jump Camera
+		//	setCameraPositionJumpView();
+		//}
         else if (Input.GetKey(KeyCode.Q))  //Q
         {
             // Change Up Camera
@@ -90,13 +90,13 @@ public class ThirdPersonCamera : MonoBehaviour
 		transform.forward = frontPos.forward;
 	}
 
-	void setCameraPositionJumpView()
-	{
-		// Change Jump Camera
-		bQuickSwitch = false;
-				transform.position = Vector3.Lerp(transform.position, jumpPos.position, Time.fixedDeltaTime * smooth);	
-				transform.forward = Vector3.Lerp(transform.forward, jumpPos.forward, Time.fixedDeltaTime * smooth);		
-	}
+	//void setCameraPositionJumpView()
+	//{
+	//	// Change Jump Camera
+	//	bQuickSwitch = false;
+	//			transform.position = Vector3.Lerp(transform.position, jumpPos.position, Time.fixedDeltaTime * smooth);	
+	//			transform.forward = Vector3.Lerp(transform.forward, jumpPos.forward, Time.fixedDeltaTime * smooth);		
+	//}
     void setCameraPositionUpView()
     {
         // Change Front Camera
