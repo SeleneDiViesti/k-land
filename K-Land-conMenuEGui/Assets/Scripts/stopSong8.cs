@@ -5,6 +5,7 @@ using UnityEngine;
 public class stopSong8 : MonoBehaviour {
 
     public AudioSource song8;
+    public GameObject gui;
 	// Use this for initialization
 	void Start () {
         song8.GetComponent<AudioSource>();
@@ -15,6 +16,15 @@ public class stopSong8 : MonoBehaviour {
         if (other.CompareTag("Player"))
         {
             song8.Stop();
+            gui.SetActive(true);
+        }
+
+    }
+    void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {            
+            gui.SetActive(false);
         }
 
     }

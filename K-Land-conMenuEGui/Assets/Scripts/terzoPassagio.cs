@@ -12,6 +12,7 @@ public class terzoPassagio : MonoBehaviour
     private GameObject unitychain;
     public AudioSource song7;
     public AudioSource song8;
+    private Vector3 scaleFactor = new Vector3(.5f, .5f, .5f);
 
     void Start()
     {
@@ -30,6 +31,7 @@ public class terzoPassagio : MonoBehaviour
             unitychain = GameObject.FindGameObjectWithTag("Player");
             bolla.SetActive(false);
             unitychain.transform.SetPositionAndRotation(mposition, mrotation);
+            unitychain.transform.localScale = scaleFactor;
             song7.Stop();
             song8.Play();
         }
