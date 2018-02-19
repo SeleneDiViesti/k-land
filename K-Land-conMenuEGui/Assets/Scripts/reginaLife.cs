@@ -27,6 +27,9 @@ public class reginaLife : MonoBehaviour
     public AudioSource song6;
     public AudioSource song7;
 
+    public GameObject singleParts;
+    public Transform explosionPosition;
+
     void Awake()
     {
         // Setting the current health when the enemy first spawns.
@@ -97,6 +100,7 @@ public class reginaLife : MonoBehaviour
         // The enemy is dead.
         isDead = true;
         Destroy(regina);
+        singleParts.SetActive(true);
         guiRegina.SetActive(false);
         fine3.SetActive(true);
         colliderTv.SetActive(true);

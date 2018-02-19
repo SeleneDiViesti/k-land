@@ -43,9 +43,9 @@ public class infoCuffie : MonoBehaviour {
         }
     }
 
-    public void updateCuffie()
+    public void updateCuffie(int n)
     {
-        count++;
+        count=count+n;
 
         if (count <= 0)
         {

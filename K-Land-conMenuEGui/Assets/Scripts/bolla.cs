@@ -21,7 +21,7 @@ public class bolla : MonoBehaviour {
     {
         if (other.CompareTag("cuffie"))
         {
-            colliderInfoCuffie.GetComponent<infoCuffie>().updateCuffie();
+            colliderInfoCuffie.GetComponent<infoCuffie>().updateCuffie(1);
             other.enabled = false;
         }
       

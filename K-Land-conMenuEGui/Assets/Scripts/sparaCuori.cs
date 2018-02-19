@@ -7,11 +7,14 @@ public class sparaCuori : MonoBehaviour {
     public GameObject GuiBacchetta;
     public GameObject bacchetta;
     private bool isNear = false;
-    
+    private int numProiettili;
+    public GameObject ColliderInfoCuffie;
+
     public Transform myTarget;  // drag the target here
     public Transform myPos;
     public GameObject cuore;
 
+    private bool isAvaible = false;
     private float t = 2f;
 
     
@@ -53,15 +56,21 @@ public class sparaCuori : MonoBehaviour {
         }
     }
     // Update is called once per frame
-    private void FixedUpdate()
+    private void Update()
     {
         if (isNear)
         {
-            if (Input.GetKeyDown(KeyCode.X))
+           
+            numProiettili = ColliderInfoCuffie.GetComponent<infoCuffie>().GetCuffie();
+            if (Input.GetKeyDown(KeyCode.X) && numProiettili>0)
+                isAvaible = true;
+            if (isAvaible)
             {
                 GameObject heart = Instantiate(cuore, myPos.transform.position, myPos.transform.rotation, bacchetta.transform);
                 
                 SimulateProjectile(heart);
+                ColliderInfoCuffie.GetComponent<infoCuffie>().updateCuffie(-1);
+                isAvaible = false;
             }
         }
     }

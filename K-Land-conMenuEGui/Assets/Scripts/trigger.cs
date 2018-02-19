@@ -16,7 +16,7 @@ public class trigger : MonoBehaviour {
     {
         //Debug.Log("trigger");
        if (other.CompareTag("Player"))
-       player.GetComponent<PlayerLife>().TakeDamage(6);
+       player.GetComponent<PlayerLife>().TakeDamage(8);
     }
     // Update is called once per frame
     void Update () {
