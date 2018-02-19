@@ -20,7 +20,7 @@ public class sparaCuori2 : MonoBehaviour {
     public Transform myPos;
     public GameObject cuore2;  // drag the cannonball prefab here
 
-    private bool isAvaible = false;
+   
     // private List<GameObject> palle;
 
     //private float firingAngle = 45.0f;
@@ -64,15 +64,13 @@ public class sparaCuori2 : MonoBehaviour {
         if (isNear)
         {
             numProiettili = ColliderInfoCuffie.GetComponent<infoCuffie>().GetCuffie();
-            if (Input.GetKeyDown(KeyCode.X))
-                isAvaible = true;
-            if (isAvaible)
+            if (Input.GetKeyDown(KeyCode.X) && numProiettili>0)
+            
             {
                 GameObject heart = Instantiate(cuore2, myPos.transform.position, myPos.transform.rotation, bacchetta.transform);
                 
                 SimulateProjectile(heart);
                 ColliderInfoCuffie.GetComponent<infoCuffie>().updateCuffie(-1);
-                isAvaible = false;
             }
         }
     }

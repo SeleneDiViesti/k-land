@@ -14,7 +14,6 @@ public class sparaCuori : MonoBehaviour {
     public Transform myPos;
     public GameObject cuore;
 
-    private bool isAvaible = false;
     private float t = 2f;
 
     
@@ -63,14 +62,13 @@ public class sparaCuori : MonoBehaviour {
            
             numProiettili = ColliderInfoCuffie.GetComponent<infoCuffie>().GetCuffie();
             if (Input.GetKeyDown(KeyCode.X) && numProiettili>0)
-                isAvaible = true;
-            if (isAvaible)
+             
             {
                 GameObject heart = Instantiate(cuore, myPos.transform.position, myPos.transform.rotation, bacchetta.transform);
                 
                 SimulateProjectile(heart);
                 ColliderInfoCuffie.GetComponent<infoCuffie>().updateCuffie(-1);
-                isAvaible = false;
+             
             }
         }
     }
