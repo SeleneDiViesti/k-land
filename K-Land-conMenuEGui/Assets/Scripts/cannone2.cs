@@ -75,7 +75,7 @@ public class cannone2 : MonoBehaviour
     {
         if (locked)
         {
-            if (unitychain.GetComponent<UnityChanControlScriptWithRgidBody>().GetNumberSpille() >= 10)
+            if (unitychain.GetComponent<UnityChanControlScriptWithRgidBody>().GetNumberSpille() >= 15)
             {
                 unlock();
             }
