@@ -31,6 +31,7 @@ public class reginaLife : MonoBehaviour
     public Transform explosionPosition;
 
     public AudioSource reginaHurts;
+    public AudioSource reginaDeath;
 
     void Awake()
     {
@@ -108,6 +109,7 @@ public class reginaLife : MonoBehaviour
         colliderTv.SetActive(true);
         song6.Stop();
         song7.Play();
+        reginaDeath.Play();
     }
 
 }

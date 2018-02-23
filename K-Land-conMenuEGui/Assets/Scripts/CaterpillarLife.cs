@@ -45,6 +45,7 @@ public class CaterpillarLife : MonoBehaviour {
     private Animator percorsoMusic;
 
     public AudioSource CaterpillarHurts;
+    public AudioSource CaterpillarDeath;
 
     void Awake()
     {
@@ -146,8 +147,9 @@ public class CaterpillarLife : MonoBehaviour {
         
         unitychain.transform.SetPositionAndRotation(mposition, mrotation);
         tv1.Play("tv_animation");
-            
-    }
+        CaterpillarDeath.Play();
+
+}
 
     private IEnumerator DelayedCoroutine()
     {
