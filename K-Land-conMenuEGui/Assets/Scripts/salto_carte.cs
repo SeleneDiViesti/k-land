@@ -16,6 +16,7 @@ public class salto_carte : MonoBehaviour
     static int idleState = Animator.StringToHash("Base Layer.terra");
     static int animazione = Animator.StringToHash("Base Layer.molla_albero");
 
+    private bool firstTime = true;
     public VideoPlayer video1;
 
     void Awake()
@@ -38,11 +39,16 @@ public class salto_carte : MonoBehaviour
             
             //unitychain.transform.SetPositionAndRotation (mposition, mrotation);
             unitychain.transform.localScale = scaleFactor;
-
+            
             video1.Play();
             anim.SetBool("transition", true);
             song4.Stop();
             gui.SetActive(false);
+            if (firstTime)
+            {
+                unitychain.GetComponent<UnityChanControlScriptWithRgidBody>().slowSpeed();
+                firstTime = false;
+            }
         }
     }
 

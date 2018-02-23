@@ -17,13 +17,14 @@ public class UnityChanControlScriptWithRgidBody : MonoBehaviour
 
     public Text countText;                      //per le spille da raccogliere
     public int count;
+    public AudioSource pinAudio;
     public GameObject ColliderInfoCaterpillar;
 
     public Image pinImage;                                   
     public float flashSpeed = 2f;                               
     public Color flashColour = new Color(1f, 0f, 0f, 0.1f);     
     bool pinned;
-
+    
     public float animSpeed = 1.5f;				// アニメーション再生速度設定
 	public float lookSmoother = 3.0f;			// a smoothing setting for camera motion
 	public bool useCurves = true;				// Mecanimでカーブ調整を使うか設定する
@@ -223,6 +224,7 @@ public class UnityChanControlScriptWithRgidBody : MonoBehaviour
             count = count + 1;
             SetCountText();
             ColliderInfoCaterpillar.GetComponent<GUILifeFirstEnemy>().updateProiettili(1);
+            pinAudio.Play();
         }
     }
 
@@ -262,4 +264,16 @@ public class UnityChanControlScriptWithRgidBody : MonoBehaviour
 		col.height = orgColHight;
 		col.center = orgVectColCenter;
 	}
+    public void slowSpeed()
+    {
+        forwardSpeed = forwardSpeed / 3.5f;
+    }
+    public void fastSpeed()
+    {
+        forwardSpeed = forwardSpeed * 1.5f;
+    }
+    public void fastSpeed2()
+    {
+        forwardSpeed = forwardSpeed * 4f;
+    }
 }

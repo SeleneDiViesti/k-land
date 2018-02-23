@@ -25,10 +25,7 @@ public class sparaProiettile : MonoBehaviour {
     public Transform myPos;
     public GameObject projecticle;  // drag the cannonball prefab here
 
-    //private List<GameObject> palle;
-
-    //private float firingAngle = 45.0f;
-    //private float gravity = 9.8f;
+    public AudioSource sparo;
     private float t = 2f;
 
     public GameObject ColliderInfoCaterpillar;
@@ -66,6 +63,7 @@ public class sparaProiettile : MonoBehaviour {
 
         palla.GetComponent<Rigidbody>().AddForce(Vector3.left * 10f, ForceMode.VelocityChange); 
         palla.GetComponent<Rigidbody>().AddForce(Vector3.up * V0y* 1.2f , ForceMode.VelocityChange);
+        sparo.Play();
     }
 
 

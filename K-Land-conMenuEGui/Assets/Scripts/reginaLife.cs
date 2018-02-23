@@ -30,6 +30,8 @@ public class reginaLife : MonoBehaviour
     public GameObject singleParts;
     public Transform explosionPosition;
 
+    public AudioSource reginaHurts;
+
     void Awake()
     {
         // Setting the current health when the enemy first spawns.
@@ -79,7 +81,7 @@ public class reginaLife : MonoBehaviour
             return;
 
         //// Play the hurt sound effect.
-        //enemyAudio.Play();
+        reginaHurts.Play();
 
         // Reduce the current health by the amount of damage sustained.
         damaged = true;

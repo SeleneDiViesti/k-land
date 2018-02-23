@@ -44,6 +44,8 @@ public class CaterpillarLife : MonoBehaviour {
     private Animator percorsoRabbit;
     private Animator percorsoMusic;
 
+    public AudioSource CaterpillarHurts;
+
     void Awake()
     {
         
@@ -89,6 +91,7 @@ public class CaterpillarLife : MonoBehaviour {
         if (other.CompareTag("proiettile2"))
         {
             TakeDamage(5);
+           // TakeDamage(100);
             Destroy(other.gameObject);
         }
         if (other.CompareTag("proiettile3"))
@@ -108,7 +111,7 @@ public class CaterpillarLife : MonoBehaviour {
             return;
 
         //// Play the hurt sound effect.
-        //enemyAudio.Play();
+        CaterpillarHurts.Play();
 
         // Reduce the current health by the amount of damage sustained.
         damaged = true;

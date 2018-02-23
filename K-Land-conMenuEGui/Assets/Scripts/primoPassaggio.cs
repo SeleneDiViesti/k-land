@@ -31,6 +31,7 @@ public class primoPassaggio : MonoBehaviour
             unitychain.transform.SetPositionAndRotation(mposition, mrotation);
             song3.Stop();
             song4.Play();
+            unitychain.GetComponent<UnityChanControlScriptWithRgidBody>().fastSpeed();
         }
     }
 }

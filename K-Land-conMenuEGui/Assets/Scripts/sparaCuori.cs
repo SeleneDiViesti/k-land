@@ -14,6 +14,8 @@ public class sparaCuori : MonoBehaviour {
     public Transform myPos;
     public GameObject cuore;
 
+    public AudioSource sparo;
+
     private float t = 2f;
 
     
@@ -35,6 +37,7 @@ public class sparaCuori : MonoBehaviour {
 
         cuore.GetComponent<Rigidbody>().AddForce(Vector3.forward * 5f, ForceMode.VelocityChange);
         cuore.GetComponent<Rigidbody>().AddForce(Vector3.up * V0y * 1.2f, ForceMode.VelocityChange);
+        sparo.Play();
     }
 
     void OnTriggerEnter(Collider other)
@@ -68,7 +71,7 @@ public class sparaCuori : MonoBehaviour {
                 
                 SimulateProjectile(heart);
                 ColliderInfoCuffie.GetComponent<infoCuffie>().updateCuffie(-1);
-             
+               
             }
         }
     }

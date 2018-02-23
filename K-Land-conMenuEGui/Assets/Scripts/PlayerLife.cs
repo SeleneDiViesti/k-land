@@ -18,6 +18,8 @@ public class PlayerLife : MonoBehaviour
     bool damaged;
     public GameObject damageContainer;
     public GameObject guiGame;
+    public AudioSource AliceHurts;
+    public AudioSource AliceDeath;
 
     void Awake()
     {
@@ -75,7 +77,7 @@ public class PlayerLife : MonoBehaviour
         LifeSlider.value = currentHealth;
 
         // Play the hurt sound effect.
-       // playerAudio.Play();
+        AliceHurts.Play();
 
         // If the player has lost all it's health and the death flag hasn't been set yet...
         if (currentHealth <= 0 && !isDead)
@@ -99,7 +101,7 @@ public class PlayerLife : MonoBehaviour
 
         // Set the audiosource to play the death clip and play it (this will stop the hurt sound from playing).
         //playerAudio.clip = deathClip;
-        //playerAudio.Play();
+       AliceDeath.Play();
 
         // Turn off the movement and shooting scripts.
         // playerMovement.enabled = false;

@@ -34,20 +34,14 @@ public class cannone3 : MonoBehaviour {
 
     public GameObject ColliderInfoCaterpillar;
 
-    //private float firingAngle = 45.0f;
-    //private float gravity = 9.8f;
+    public AudioSource sparo;
     private float t = 2f;
     // Use this for initialization
     void Start () {
         
-        //CorpoCannone3 = GameObject.Find("CorpoCannone3");
-        ////GuiCatapulta = GameObject.Find("GuiCatapulta");
-        //Cannone3 = GameObject.Find("Cannone3");
         GuiCatapulta.SetActive(false);
         anim3 = CorpoCannone3.GetComponent<Animator>();
         
-        //palle = new List<GameObject>();
-        //StartCoroutine(SimulateProjectile());
         anim3.Play("New State3");
     }
 
@@ -65,7 +59,8 @@ public class cannone3 : MonoBehaviour {
 
         palla.GetComponent<Rigidbody>().AddForce(Vector3.right * 10f, ForceMode.VelocityChange);
         palla.GetComponent<Rigidbody>().AddForce(Vector3.up * V0y * 1.2f, ForceMode.VelocityChange);
-    }
+        sparo.Play();
+}
     // Update is called once per frame
     private void FixedUpdate()
     {

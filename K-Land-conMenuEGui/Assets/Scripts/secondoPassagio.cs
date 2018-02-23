@@ -30,6 +30,7 @@ public class secondoPassagio : MonoBehaviour
             unitychain = GameObject.FindGameObjectWithTag("Player");
             unitychain.transform.SetPositionAndRotation(mposition, mrotation);
             unitychain.transform.localScale = scaleFactor;
+            unitychain.GetComponent<UnityChanControlScriptWithRgidBody>().fastSpeed2();
             song5.Stop();
             song6.Play();
         }

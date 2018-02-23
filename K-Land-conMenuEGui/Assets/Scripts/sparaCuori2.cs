@@ -16,15 +16,13 @@ public class sparaCuori2 : MonoBehaviour {
     private bool locked = true;
     private bool isNear = false;
        
-    public Transform myTarget;  // drag the target here
+    public Transform myTarget;  
     public Transform myPos;
-    public GameObject cuore2;  // drag the cannonball prefab here
+    public GameObject cuore2;  
 
-   
-    // private List<GameObject> palle;
+    public AudioSource sparo;
 
-    //private float firingAngle = 45.0f;
-    //private float gravity = 9.8f;
+    
     private float t = 2f;
     
     // Use this for initialization
@@ -48,6 +46,7 @@ public class sparaCuori2 : MonoBehaviour {
 
         cuore.GetComponent<Rigidbody>().AddForce(Vector3.left * 7f, ForceMode.VelocityChange);
         cuore.GetComponent<Rigidbody>().AddForce(Vector3.up * V0y * 1f, ForceMode.VelocityChange);
+        sparo.Play();
     }
 
 
@@ -70,6 +69,7 @@ public class sparaCuori2 : MonoBehaviour {
                 GameObject heart = Instantiate(cuore2, myPos.transform.position, myPos.transform.rotation, bacchetta.transform);
                 
                 SimulateProjectile(heart);
+               
                 ColliderInfoCuffie.GetComponent<infoCuffie>().updateCuffie(-1);
             }
         }
