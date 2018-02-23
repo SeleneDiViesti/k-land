@@ -266,11 +266,11 @@ public class UnityChanControlScriptWithRgidBody : MonoBehaviour
 	}
     public void slowSpeed()
     {
-        forwardSpeed = forwardSpeed / 3.5f;
+        forwardSpeed = forwardSpeed / 4f;
     }
     public void fastSpeed()
     {
-        forwardSpeed = forwardSpeed * 1.5f;
+        forwardSpeed = forwardSpeed * 1.3f;
     }
     public void fastSpeed2()
     {
