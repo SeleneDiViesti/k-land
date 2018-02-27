@@ -21,8 +21,10 @@ public class incontroGatto : MonoBehaviour
     private Animator anim_ramo;
     private AnimatorStateInfo currentBaseState;
     public GameObject fine2;
-   
-   // private AnimatorStateInfo currentBaseState;
+    public GameObject portale;
+    
+
+    // private AnimatorStateInfo currentBaseState;
     static int idleState = Animator.StringToHash("Base Layer.gatto_fermo");
     static int animazione = Animator.StringToHash("Base Layer.gatto_animation");
 
@@ -49,6 +51,7 @@ public class incontroGatto : MonoBehaviour
             isHere = true;
             anim.SetBool("isHere",true);
             song5.Play();
+            portale.SetActive(true);
         }
     }
 
