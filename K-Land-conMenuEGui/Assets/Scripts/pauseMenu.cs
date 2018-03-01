@@ -49,12 +49,12 @@ public class pauseMenu : MonoBehaviour {
         GameIsPaused = true;
     }
 
-    void Exit()
+    public void Exit()
     {
         vuoiUscire.SetActive(true);
     }
 
-    void noButtonPressed()
+    void NoButtonPressed()
     {
         vuoiUscire.SetActive(false);
     }

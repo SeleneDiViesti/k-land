@@ -7,6 +7,7 @@ public class MainMenu : MonoBehaviour {
 
     public GameObject video;
     public GameObject mainmenu;
+    public GameObject vuoiUscire;
 
     public void PlayGame()
     {
@@ -14,6 +15,16 @@ public class MainMenu : MonoBehaviour {
         //SceneManager.LoadScene("videoIntro_scene");
         video.SetActive(true);
         mainmenu.SetActive(false);
+    }
+
+    public void Exit()
+    {
+        vuoiUscire.SetActive(true);
+    }
+
+    public void NoButtonPressed()
+    {
+        vuoiUscire.SetActive(false);
     }
 
     public void QuitGame()
