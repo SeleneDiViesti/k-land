@@ -54,7 +54,7 @@ public class pauseMenu : MonoBehaviour {
         vuoiUscire.SetActive(true);
     }
 
-    void NoButtonPressed()
+    public void NoButtonPressed()
     {
         vuoiUscire.SetActive(false);
     }
